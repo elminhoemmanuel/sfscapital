@@ -8,7 +8,7 @@ const TestimonialCard = ({ testimonialObj }) => {
                     </div>
             </div>
             <div className='shadow-xl px-4 md:px-6 py-10 bg-white follower'>
-                <div className='flex flex-col w-full  py-8'>
+                <div className='flex flex-col w-full  pt-16 pb-4'>
                     <div className='mb-2 text-sm text-didallatitle'><p>{testimonialObj.text}</p></div>
                     <div className='mb-2 text-sm'><p className='font-bold'>{testimonialObj.name}</p></div>
                     <div className='mb-2 text-sm text-didallabody'><p className=''>{testimonialObj.location}</p></div>
