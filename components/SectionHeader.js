@@ -1,12 +1,12 @@
 import React from 'react'
 
-const SectionHeader = ({textColor}) => {
+const SectionHeader = ({textColor , headerText}) => {
 
-    const style = "text-center text-3xl md:text-4xl "  + textColor + " "
+    const style = "text-center text-3xl md:text-4xl  "  + textColor + " "
 
     return (
         <div className='mb-16'>
-            <h1 className={style}>How Cropshares Works</h1>
+            <h1 className={style}>{headerText}</h1>
             
         </div>
     )

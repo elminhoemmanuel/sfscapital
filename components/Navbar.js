@@ -19,15 +19,15 @@ const Navbar = ({}) => {
     return ( 
         <>
             {/* mobile screens vertical nav */}
-            <div className={menuclick ? 'mobile-box-show flex shadow-xl flex-col md:hidden bg-black text-white w-full h-full fixed top-0 z-50 pt-8 max-w-screen-2xl transition'
-            : 'mobile-box flex shadow-xl flex-col md:hidden bg-black text-white w-3/4 h-full fixed top-0  z-50 pt-8 max-w-screen-2xl '}>
+            <div className={menuclick ? 'mobile-box-show flex shadow-xl flex-col lg:hidden bg-black text-white w-full h-full fixed top-0 z-50 pt-8 max-w-screen-2xl transition'
+            : 'mobile-box flex shadow-xl flex-col lg:hidden bg-black text-white w-3/4 h-full fixed top-0  z-50 pt-8 max-w-screen-2xl '}>
                 <div className=''>
-                    <div className='md:hidden flex flex-row justify-end mb-4 px-2'>
+                    <div className='lg:hidden flex flex-row justify-end mb-4 px-2'>
                         <button onClick={handleClickMobile} className='block focus:outline-none outline-none' type='button'><svg className="w-8 h-8 text-white hover:text-greensec" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg></button>   
                     </div> 
                 </div>
 
-                <div className='flex md:hidden flex-col font-bold'>
+                <div className='flex lg:hidden flex-col font-bold'>
                         <div onClick={handleClickMobile}>
                             <Link className='block w-full' href="/">
                                 <a className='text-center block mb-2 w-full py-3 px-3 lg:px-6 text-white hover:text-greensec'>
@@ -91,10 +91,10 @@ const Navbar = ({}) => {
                 </div>
                 <div className='flex-row items-center flex'>
 
-                    <div className='hidden md:flex flex-row items-center font-bold'>
+                    <div className='hidden lg:flex flex-row items-center font-bold'>
                         <div>
                             <Link className='block w-full' href="/">
-                                <a className='block text-greenpri w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'>
+                                <a className='block text-greenpri w-full py-2 px-3 lg:px-6  hover:text-greensec'>
                                     Home
                                 </a>
                             </Link>
@@ -138,7 +138,7 @@ const Navbar = ({}) => {
 
                     </div>
 
-                    <div className='md:hidden'>
+                    <div className='lg:hidden'>
                         <button onClick={handleClick} className='mr-4 block focus:outline-none outline-none' type='button'><svg className="w-8 h-8 text-greenpri hover:text-greensec" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg></button>
                     </div>
 

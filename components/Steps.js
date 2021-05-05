@@ -4,10 +4,14 @@ import SectionHeader from './SectionHeader'
 import { FaUserPlus, FaCarrot, FaMobileAlt, FaHandHoldingUsd  } from 'react-icons/fa';
 
 const Steps = () => {
+
     const headerColor= "text-white"
+
+    const headerText = 'How it works'
+
     return (
         <div className='text-white px-6 md:px-10 lg:px-20 py-16 bg-gradient-to-br from-greenpri to-greensec'>
-            <SectionHeader textColor={headerColor}/>
+            <SectionHeader headerText={headerText} textColor={headerColor}/>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 '>
                 <div>

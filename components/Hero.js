@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Hero = () => {
     return (
-        <div className='hero-box text-white px-6 md:px-10 lg:px-20 bg-no-repeat bg-cover bg-center
+        <div className='hero-box text-white px-6 md:px-10 lg:px-20 bg-no-repeat bg-cover md:bg-center
         pt-32 h-full lg:h-screen pb-10 lg:pb-0'>
             <div className='pt-20 pb-6'>
                 <h1 className='text-4xl md:text-6xl md:whitespace-nowrap leading-tight tracking-wide font-bold'>Invest in Agriculture</h1>

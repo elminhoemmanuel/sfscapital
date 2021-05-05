@@ -46,3 +46,54 @@ html, body{
 .hero-box{
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/farmhero.jpg");
 }
+
+//plans Section
+.maize-plan{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/maize.jpg");
+}
+
+/* styles for carousel/testimonial section */
+.swiper-container{
+    width:100%;
+    height:auto !important;
+    padding: 0rem 3rem 5rem 3rem !important;
+    position: relative;
+}
+
+.swiper-wrapper{
+    padding-inline-start: 0;
+}
+
+.swiper-button-prev{
+    background-color: white !important;
+    color:black !important;
+    position: absolute !important;
+    background-image: url('../public/images/ArrowCircleLeft.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-button-next{
+    background-color: white !important;
+    color:black !important;
+    position: absolute !important;
+    background-image: url('../public/images/ArrowCircleRight.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.swiper-button-next::after {
+    display: none;
+}
+
+
+
+.follower{
+    margin-top: -3.5rem;
+}
