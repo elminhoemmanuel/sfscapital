@@ -121,7 +121,7 @@ const ContactBody = () => {
 
                 </div>
 
-                <div className='rounded-lg shadow-xl p-5 bg-white hidden md:block'>
+                {/* <div className='rounded-lg shadow-xl p-5 bg-white hidden md:block'>
                     <h1 className='font-bold text-xl mb-6 text-greenpri'>Contact Form</h1>
 
                     <form action="">
@@ -171,7 +171,7 @@ const ContactBody = () => {
                                 </button>
                         </div>
                     </form>
-                </div>
+                </div> */}
 
             </div>
         </div>
