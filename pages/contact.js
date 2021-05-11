@@ -14,7 +14,7 @@ export default function Home() {
         </Head>
 
         <div className='max-w-screen-2xl mx-auto'>
-        <Navbar activePage='home' />
+        <Navbar activePage='contact' />
         <ContactBody />
         <Footer />
         </div>
