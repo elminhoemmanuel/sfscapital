@@ -68,6 +68,44 @@ const ContactBody = () => {
 
                 </div>
 
+                <div className='rounded-lg shadow-xl p-5 bg-white'>
+                    <h1 className='font-bold text-xl mb-6 text-greenpri'>Contact Form</h1>
+
+                    <form action="">
+                        <div className='mb-4'>
+                            <input type="text" 
+                            name='fullname'
+                            id='fullname'
+                            placeholder="Full Name"
+                            className='placeholder-black w-full border border-gray-300 rounded focus:border-greenpri focus:outline-none p-3'
+                            />
+                        </div>
+                        
+                        <div className='grid grid-cols-1 md:grid-cols-2 gap-2 mb-4'>
+                            <div className='mb-2'>
+                                <input type="email" 
+                                name='email'
+                                id='email'
+                                placeholder="Email Address"
+                                className='placeholder-black w-full border border-gray-300 rounded focus:border-greenpri focus:outline-none p-3'
+                                />
+                            </div>
+                            <div className='mb-2'>
+                                <input type="number" 
+                                name='Phone Number'
+                                id='Phone Number'
+                                placeholder="Phone Number"
+                                className='placeholder-black w-full border border-gray-300 rounded focus:border-greenpri focus:outline-none p-3'
+                                />
+                            </div>
+                        </div>
+
+                        
+
+                        
+                    </form>
+                </div>
+
             </div>
         </div>
     )
