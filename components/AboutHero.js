@@ -9,7 +9,7 @@ const AboutHero = () => {
         <div className='px-6 md:px-10 lg:px-20 bg-cultured pt-40 md:pb-24 '>
             <div className='grid grid-cols-1 md:grid-cols-2 pb-16 gap-5'>
                 <div className='pt-0 '>
-                    <h1 className='text-3xl md:text-4xl font-bold mb-10 text-center md:text-left'>
+                    <h1 className='text-3xl md:text-4xl font-bold mb-10 text-center md:text-left text-greensec'>
                         Who we are
                     </h1>
                     <p className='mb-3 text-center md:text-left'>

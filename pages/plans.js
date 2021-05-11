@@ -14,10 +14,12 @@ export default function About() {
             <meta name="keywords" content="Cropshares, agri-bussiness investment made easy"/>
         </Head>
 
+        <div className='max-w-screen-2xl mx-auto'>
         <Navbar activePage='plans'/>
         <PlansHero />
         <ActualPlans />
         <Footer />
+        </div>
     </>
   )
 }

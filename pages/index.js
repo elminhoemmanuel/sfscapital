@@ -18,6 +18,7 @@ export default function Home() {
             <meta name="keywords" content="Cropshares, agri-bussiness investment made easy"/>
         </Head>
 
+        <div className=''>
         <Navbar activePage='home' />
         <Hero />
         <Steps />
@@ -27,6 +28,7 @@ export default function Home() {
         <Brands />
         <CTA />
         <Footer />
+        </div>
     </>
   )
 }
