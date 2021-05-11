@@ -20,7 +20,7 @@ const ContactBody = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6'>
 
-                <div className='rounded-lg shadow-xl p-5 bg-white  md:hidden'>
+                <div className='rounded-lg shadow-xl p-5 bg-white md:hidden'>
                     <h1 className='font-bold text-xl mb-6 text-greenpri'>Contact Form</h1>
 
                     <form action="">
