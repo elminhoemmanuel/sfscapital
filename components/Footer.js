@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h1 className='font-bold text-3xl mb-6'>Say Hello</h1>
+                    <h1 className='font-bold text-2xl mb-6'>Say Hello</h1>
 
                     <p className='hover:text-greenpri mb-4 text-sm'>Suite  007, First  Floor, Future  View  Plaza, opposite FCMB, Sabo  Tasha, Kaduna State. </p>
 
@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h1 className='font-bold text-3xl mb-6'>Resources</h1>
+                    <h1 className='font-bold text-2xl mb-6'>Resources</h1>
                     <div>
                         {footerObjOne.map(item =>{
                             return <Link key={item.id} href={item.link} className='block'>
@@ -40,11 +40,11 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h1 className='font-bold text-3xl mb-6'>Social</h1>
+                    <h1 className='font-bold text-2xl mb-6'>Social</h1>
                     <div className='flex items-center justify-start'>
                         {footerObjTwo.map(item =>{
                             return <Link key={item.id} href={item.url} className='block'>
-                                        <a className='hover:text-greenpri block mb-2 mr-4'>
+                                        <a className='hover:text-greenpri block mb-2 mr-4 '>
                                             {item.image}
                                         </a>
                                     </Link>
