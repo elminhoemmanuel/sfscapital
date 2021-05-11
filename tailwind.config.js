@@ -13,7 +13,7 @@ module.exports = {
         greensec:'#21c570',
         gradleft:'#8bc941',
         gradright:'#309c49',
-        cultured:'#FCFCFC',
+        cultured:'#EFF3F0',
         onyx:'#393E41',
       }
     },

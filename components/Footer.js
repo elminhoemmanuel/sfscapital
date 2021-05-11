@@ -19,11 +19,11 @@ const Footer = () => {
                 <div>
                     <h1 className='font-bold text-3xl mb-6'>Say Hello</h1>
 
-                    <p className='hover:text-greenpri mb-4'>Suite  007, First  Floor, Future  View  Plaza, opposite FCMB, Sabo  Tasha, Kaduna State. </p>
+                    <p className='hover:text-greenpri mb-4 text-sm'>Suite  007, First  Floor, Future  View  Plaza, opposite FCMB, Sabo  Tasha, Kaduna State. </p>
 
-                    <a className='hover:text-greenpri block mb-2' href="tel:+23409136553953">+23409136553953</a>
-                    <a className='hover:text-greenpri block mb-2' href="tel:+23409136553953">+23409136553953</a>
-                    <a className='hover:text-greenpri block mb-2' href="mailto:cropsharesafrica@gmail.com">cropsharesafrica@gmail.com</a>
+                    <a className='hover:text-greenpri block mb-2 text-sm' href="tel:+23409136553953">+23409136553953</a>
+                    <a className='hover:text-greenpri block mb-2 text-sm' href="tel:+23409136553953">+23409136553953</a>
+                    <a className='hover:text-greenpri block mb-2 text-sm' href="mailto:cropsharesafrica@gmail.com">cropsharesafrica@gmail.com</a>
 
                 </div>
 
@@ -32,7 +32,7 @@ const Footer = () => {
                     <div>
                         {footerObjOne.map(item =>{
                             return <Link key={item.id} href={item.link} className='block'>
-                                        <a className='whitespace-nowrap hover:text-greenpri block mb-2'>{item.value}</a>
+                                        <a className='whitespace-nowrap hover:text-greenpri block mb-2 text-sm'>{item.value}</a>
                                     </Link>
                                 
                         })}
@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
 
             <div className='border-t border-gray-300 pt-10'>
-                <p className='text-center'>Copyright © 2021 Cropshares Africa. All rights reserved.</p>
+                <p className='text-center text-sm'>Copyright © 2021 Cropshares Africa. All rights reserved.</p>
 
             </div>
             

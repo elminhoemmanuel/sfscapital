@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 
-const Navbar = ({}) => {
+const Navbar = ({activePage}) => {
 
     const [menuclick, setMenuClick] = useState(false);
 
@@ -94,35 +94,55 @@ const Navbar = ({}) => {
                     <div className='hidden lg:flex flex-row items-center font-bold'>
                         <div>
                             <Link className='block w-full' href="/">
-                                <a className='block text-greenpri w-full py-2 px-3 lg:px-6  hover:text-greensec'>
+                                <a 
+                                className={
+                                    activePage==='home' ? 'block text-greenpri w-full py-2 px-3 lg:px-6 hover:text-greensec' :
+                                    'block text-black w-full py-2 px-3 lg:px-6 hover:text-greensec'
+                                }>
                                     Home
                                 </a>
                             </Link>
                         </div>
                         <div>
                             <Link className='block w-full' href="/about">
-                                <a className='block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'>
+                                <a 
+                                className= {
+                                    activePage==="about" ? 'block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-greenpri hover:text-greensec' :
+                                    'block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'
+                                }>
                                     About Us
                                 </a>
                             </Link>
                         </div>
                         <div>
                             <Link className='block w-full' href="/plans">
-                                <a className='block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'>
+                            <a 
+                                className= {
+                                    activePage==="plans" ? 'block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-greenpri hover:text-greensec' :
+                                    'block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'
+                                }>
                                     Plans
                                 </a>
                             </Link>
                         </div>
                         <div>
                             <Link className='block w-full' href="/contact">
-                                <a className='block whitespace-nowrap w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'>
+                            <a 
+                                className= {
+                                    activePage==="contact" ? 'block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-greenpri hover:text-greensec' :
+                                    'block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'
+                                }>
                                     Contact
                                 </a>
                             </Link>
                         </div>
                         <div>
                             <Link className='block w-full' href="/login">
-                                <a className='block whitespace-nowrap w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'>
+                            <a 
+                                className= {
+                                    activePage==="login" ? 'block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-greenpri hover:text-greensec' :
+                                    'block whitespace-nowrap  w-full py-2 px-3 lg:px-6 text-black hover:text-greensec'
+                                }>
                                     Login
                                 </a>
                             </Link>

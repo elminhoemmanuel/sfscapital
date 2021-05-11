@@ -51,6 +51,15 @@ html, body{
 .maize-plan{
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/maize.jpg");
 }
+.cabbage-plan{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/cabbage.jpg");
+}
+.mech-plan{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/about2.jpg");
+}
+.cassava-plan{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/cassava.jpg");
+}
 
 /* styles for carousel/testimonial section */
 .swiper-container{
@@ -96,4 +105,36 @@ html, body{
 
 .follower{
     margin-top: -3.5rem;
+}
+
+//About page
+.about1{
+    left:30%;
+    top:0;
+}
+
+.about2{
+    left:10%;
+    top:45%;
+}
+
+//plans page
+//olanshero section
+.planshero-box{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/about1.jpg");
+}
+
+
+
+//media queries
+@media screen and (max-width:1025px){
+    .about1{
+        left:20%;
+        top:0;
+    }
+    
+    .about2{
+        left:0%;
+        top:43%;
+    }
 }
