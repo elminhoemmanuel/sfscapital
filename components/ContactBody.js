@@ -6,7 +6,7 @@ import Link from 'next/link'
 const ContactBody = () => {
 
     return (
-        <div className='px-6 md:px-10 lg:px-20 pt-40 pb-16 bg-cultured'>
+        <div className='px-6 md:px-10 lg:px-20 pt-40 pb-16 bg-white'>
             <div className='mb-3'>
                 <h1 className='text-left md:text-center text-3xl md:text-4xl text-greensec'>Contact Us</h1>
             
@@ -18,10 +18,10 @@ const ContactBody = () => {
                 </p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6'>
 
-                <div className='rounded-lg shadow-xl p-5 bg-white'>
-                    <h1 className='font-bold text-xl mb-6 text-greenpri'>Contact Form</h1>
+                <div className='p-5 rounded-lg shadow-2xl bg-white'>
+                    <h1 className='font-bold text-xl mb-4 text-greenpri'>Contact Form</h1>
 
                     <form action="">
                         <div className='mb-4'>
@@ -72,9 +72,9 @@ const ContactBody = () => {
                     </form>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
                     <div>
-                        <h1 className='font-bold text-xl mb-6 text-greenpri'>Helplines</h1>
+                        <h1 className='font-bold text-xl mb-4 text-greenpri'>Helplines</h1>
 
                         <p className='text-sm mb-3'>Our phone lines will be on
                             from 8:30am to 4pm, Mondays to
@@ -86,7 +86,7 @@ const ContactBody = () => {
                     </div>
                     
                     <div>
-                        <h1 className='font-bold text-xl mb-6 text-greenpri'>Email</h1>
+                        <h1 className='font-bold text-xl mb-4 text-greenpri'>Email</h1>
 
                         <p className='text-sm mb-3'>All official correspondence and
                             enquiries should be forwared to;
@@ -96,7 +96,7 @@ const ContactBody = () => {
                     </div>
 
                     <div>
-                        <h1 className='font-bold text-xl mb-6 text-greenpri'>Office Address</h1>
+                        <h1 className='font-bold text-xl mb-4 text-greenpri'>Office Address</h1>
 
                         <p className='text-sm mb-3'>Suite 007, First Floor, Future View Plaza, opposite FCMB, Sabo Tasha, Kaduna State.
                         </p>
@@ -104,7 +104,7 @@ const ContactBody = () => {
                     </div>
 
                     <div>
-                        <h1 className='font-bold text-xl mb-6 text-greenpri'>Connect</h1>
+                        <h1 className='font-bold text-xl mb-4 text-greenpri'>Connect</h1>
 
                         <div className='flex items-center justify-start'>
                             {footerObjTwo.map(item =>{
@@ -122,7 +122,7 @@ const ContactBody = () => {
                 </div>
 
                 {/* <div className='rounded-lg shadow-xl p-5 bg-white hidden md:block'>
-                    <h1 className='font-bold text-xl mb-6 text-greenpri'>Contact Form</h1>
+                    <h1 className='font-bold text-xl mb-4 text-greenpri'>Contact Form</h1>
 
                     <form action="">
                         <div className='mb-4'>
