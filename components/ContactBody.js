@@ -18,7 +18,7 @@ const ContactBody = () => {
                 </p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
 
                 <div className='p-5 rounded-lg shadow-2xl bg-white'>
                     <h1 className='font-bold text-xl mb-4 text-greenpri'>Contact Form</h1>
