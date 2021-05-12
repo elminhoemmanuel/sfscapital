@@ -101,8 +101,6 @@ html, body{
     display: none;
 }
 
-
-
 .follower{
     margin-top: -3.5rem;
 }
@@ -122,6 +120,11 @@ html, body{
 //olanshero section
 .planshero-box{
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/about1.jpg");
+}
+
+//contact page
+.contact-box{
+    padding: 1.5rem !important;
 }
 
 
