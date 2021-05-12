@@ -18,16 +18,16 @@ export default function Home() {
             <meta name="keywords" content="Cropshares, agri-bussiness investment made easy"/>
         </Head>
 
-        <div className=''>
-        <Navbar activePage='home' />
-        <Hero />
-        <Steps />
-        <Plans />
-        <SoFar />
-        <Testimonials />
-        <Brands />
-        <CTA />
-        <Footer />
+        <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
+          <Navbar activePage='home' />
+          <Hero />
+          <Steps />
+          <Plans />
+          <SoFar />
+          <Testimonials />
+          <Brands />
+          <CTA />
+          <Footer />
         </div>
     </>
   )

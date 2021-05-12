@@ -77,8 +77,7 @@ const Navbar = ({activePage}) => {
             </div>
 
             {/* Navigation bar */}
-            <nav className='flex flex-row py-4 px-6 md:px-10 lg:px-20 justify-between items-center fixed top-0 left-0 
-            w-full bg-white max-w-screen-2xl z-10 with-border-gradient shadow-sm 2xl:max-w-screen-2xl 2xl:96'>
+            <nav className='flex flex-row py-4 px-6 md:px-10 lg:px-20 justify-between items-center fixed top-0 2xl:max-w-screen-2xl 2xl:mx-auto w-full bg-white z-10 with-border-gradient shadow-sm nav'>
                 <div className='flex flex-row justify-start items-center text-base'>
                     
                     <div className='pl-0'>
