@@ -19,7 +19,7 @@ const Plans = () => {
                         </div>
 
                         <div className='px-4 py-8'>
-                            <h1 className='text-lg md:text-xl mb-5 font-bold'>Maize Farming</h1>
+                            <h1 className='text-lg md:text-xl mb-5 font-bold'>CropMoney Maize Investment Plan</h1>
                             <div className='flex items-center justify-between mb-7'>
                                 <div className='flex items-center'>
                                     <div className='mr-2'>
@@ -61,14 +61,14 @@ const Plans = () => {
                         </div>
 
                         <div className='px-4 py-8'>
-                            <h1 className='text-lg md:text-xl mb-5 font-bold'>Cabbage Farming</h1>
+                            <h1 className='text-lg md:text-xl mb-5 font-bold'>CropMoney Cabbage Investment Plan</h1>
                             <div className='flex items-center justify-between mb-7'>
                                 <div className='flex items-center'>
                                     <div className='mr-2'>
                                         <FaStopwatch className='text-greensec w-6 h-6' />
                                     </div>
                                     <div>
-                                        <p className='text-base font-bold'>4 Months</p>
+                                        <p className='text-base font-bold'>5 Months</p>
                                     </div>
 
                                 </div>
@@ -103,7 +103,7 @@ const Plans = () => {
                         </div>
 
                         <div className='px-4 py-8'>
-                            <h1 className='text-lg md:text-xl mb-5 font-bold'>Mechanization Package</h1>
+                            <h1 className='text-lg md:text-xl mb-5 font-bold'>CropMoney Mechanization Investment Plan</h1>
                             <div className='flex items-center justify-between mb-7'>
                                 <div className='flex items-center'>
                                     <div className='mr-2'>
@@ -145,7 +145,7 @@ const Plans = () => {
                         </div>
 
                         <div className='px-4 py-8'>
-                            <h1 className='text-lg md:text-xl mb-5 font-bold'>Cassava Farming</h1>
+                            <h1 className='text-lg md:text-xl mb-5 font-bold'>CropMoney Cassava Investment Plan</h1>
                             <div className='flex items-center justify-between mb-7'>
                                 <div className='flex items-center'>
                                     <div className='mr-2'>
@@ -161,7 +161,7 @@ const Plans = () => {
                                         <FaHandHoldingUsd className='text-greensec w-6 h-6' />
                                     </div>
                                     <div>
-                                        <p className='text-sm md:text-base font-bold'>50% ROI</p>
+                                        <p className='text-sm md:text-base font-bold'>60% ROI</p>
                                     </div>
 
                                 </div>
@@ -173,7 +173,7 @@ const Plans = () => {
                                         <FaTag className='text-greensec w-4 h-4' />
                                     </div>
                                     <div>
-                                        <p className='text-base font-bold'>NGN 135000 / Unit</p>
+                                        <p className='text-base font-bold'>NGN 160000 / Unit</p>
                                     </div>
 
                             </div>
@@ -186,7 +186,7 @@ const Plans = () => {
 
                     <Link className='block ' href="/plans">
                         <a className='text-lg text-center block rounded-full whitespace-nowrap w-4/5 md:w-3/5 lg:w-1/5 py-4 px-12 text-white border-2 border-greenpri bg-greenpri hover:bg-greensec hover:border-greensec font-bold'>
-                            View Catalogue
+                            View rates
                         </a>
                     </Link>
 

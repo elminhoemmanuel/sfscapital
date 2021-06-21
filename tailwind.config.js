@@ -10,11 +10,12 @@ module.exports = {
        }),
       colors: {
         greenpri:'#90cc42',
-        greensec:'#21c570',
+        greensec:'#2D5427',
         gradleft:'#8bc941',
         gradright:'#309c49',
         cultured:'#EFF3F0',
         onyx:'#393E41',
+        graybg:'#EBECF1',
       }
     },
 

@@ -18,7 +18,7 @@ const SoFar = () => {
                 </div>
  
                 <div className='shadow-lg p-12 bg-white rounded'>
-                    <h1 className='text-3xl font-black text-center text-greensec'>600</h1>
+                    <h1 className='text-3xl font-black text-center text-greensec'>770+</h1>
                     <p className='text-sm md:text-base text-center'>Hectares farmed</p>
                 </div>
 

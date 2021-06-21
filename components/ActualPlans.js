@@ -184,7 +184,7 @@ const ActualPlans = () => {
 
             <div className='pt-16 flex items-center justify-center'>
 
-                    <Link className='block ' href="/login">
+                    <Link className='block ' href="/register">
                         <a className='text-lg text-center block rounded-full whitespace-nowrap w-4/5 md:w-3/5 lg:w-1/5 py-4 px-12 text-white border-2 border-greenpri bg-greenpri hover:bg-greensec hover:border-greensec font-bold'>
                             Get Started
                         </a>
