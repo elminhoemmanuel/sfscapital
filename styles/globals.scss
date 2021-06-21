@@ -137,7 +137,14 @@ html, body{
 }
 @keyframes s3 {to{transform: rotate(1turn)}}
 
+//for telephone input
+.PhoneInputInput, .PhoneInputCountry{
+    
+}
 
+.PhoneInputInput:focus{
+    outline: none;
+}
 
 
 //media queries

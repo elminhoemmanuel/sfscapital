@@ -1,0 +1,63 @@
+export const withdrawalsData = [
+    {
+        id:1,
+        sn:'1',
+        ref:'NCS00218136382',
+        plan:'CropMoney Maize',
+        units:'1',
+        investment:'330000',
+        date:'20/04/2021',
+        dueDate:'20/10/2021',
+        status:'Active',
+        withdraw:'Done',
+        reinvest:'Done',
+        balance:'$300',
+
+    },
+    {
+        id:2,
+        sn:'2',
+        ref:'NCS00218136382',
+        plan:'CropMoney Maize',
+        units:'1',
+        investment:'330000',
+        date:'20/04/2021',
+        dueDate:'20/10/2021',
+        status:'Active',
+        withdraw:'Done',
+        reinvest:'Done',
+        balance:'$300',
+
+    },
+    {
+        id:3,
+        sn:'3',
+        ref:'NCS00218136382',
+        plan:'CropMoney Maize',
+        units:'1',
+        investment:'330000',
+        date:'20/04/2021',
+        dueDate:'20/10/2021',
+        status:'Active',
+        withdraw:'Done',
+        reinvest:'Done',
+        balance:'$300',
+
+    },
+    {
+        id:4,
+        sn:'4',
+        ref:'NCS00218136382',
+        plan:'CropMoney Maize',
+        units:'1',
+        investment:'330000',
+        date:'20/04/2021',
+        dueDate:'20/10/2021',
+        status:'Active',
+        withdraw:'Done',
+        reinvest:'Done',
+        balance:'$300',
+
+    },
+    
+]
