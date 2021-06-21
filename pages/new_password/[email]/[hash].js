@@ -91,7 +91,7 @@ const NewPassword = () => {
                         <div className='flex items-center justify-between mr-0 mb-2'>
                             <div className=' '>
                             {
-                                    email.length === 0 || errors.email ?
+                                    password.length === 0 || errors.password ?
                                     <PrimaryBtn buttonText='Apply' addStyle='bg-greenpri text-sm pointer-events-none opacity-50'/> :
                                     <PrimaryBtn
                                     buttonText={isloading ? <div className="spinner-white"></div> : 
