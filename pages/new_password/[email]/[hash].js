@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import axios from 'axios';
 import Head from 'next/head';
-import LogoNavbar from '../../../components/LogoNavbar';
 import React, { useState, useEffect } from 'react';
 import useForm from '../../../components/useForm';
 
@@ -65,8 +64,6 @@ const NewPassword = () => {
                 <meta name="keywords" content="didalla content-creators marketplace content"/>
                 <meta name="description" content="Marketplace to book advertsing gigs with content creators"/>
             </Head>
-
-            <LogoNavbar />
 
             <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
                 <div className='bg-graybg pt-16 pb-80'>
