@@ -35,8 +35,6 @@ const NewPassword = () => {
     const handleFormSubmit = (e)=>{
         e.preventDefault();
 
-        handleNext();
-
         axios.post('https://api.cropsharesafrica.com/api/reset_password', {
             email: user_details.email,
             hash: user_details.hash,
@@ -46,7 +44,7 @@ const NewPassword = () => {
             setIsloading(false)
             console.log(response.data);
             setresetMessage(response.data.message);
-            router.push('login')
+            router.push('/login')
         }, (error) => {
             setIsloading(false)
             console.log(error);
@@ -105,7 +103,9 @@ const NewPassword = () => {
                         </div>
 
                         {
-                            resetMessage && <div className='text-red-400 text-sm'>{resetMessage}</div>
+                            resetMessage === 'Something went wrong , plase try again'
+                            ? <div className='text-red-400 text-sm'>{resetMessage}</div>
+                            : <div className='text-greenpri text-sm'>{resetMessage}</div>
                         }
 
                     </form>
