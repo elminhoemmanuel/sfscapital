@@ -3,7 +3,7 @@ import axios from 'axios';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import useForm from '../../../components/useForm';
-
+import PrimaryBtn from '../../../components/PrimaryBtn'
 
 
 const NewPassword = () => {
