@@ -12,8 +12,8 @@ const ProfileResult = () => {
     const [isLoading, setisLoading] = useState(true);
     const [isLoading3, setisLoading3] = useState(true);
     const [isLoading4, setisLoading4] = useState(true);
-    const [user, setUser] = useState()
-    const [bank, setBank] = useState()
+    const [user, setUser] = useState({})
+    const [bank, setBank] = useState({})
 
     useEffect(() => {
 
@@ -26,14 +26,10 @@ const ProfileResult = () => {
                 }}
             )
             .then((response) => {
-                // console.log(response);
+                console.log(response);
                 setUser(response.data.data)
                 console.log(user);
-                if(isLoading2){
-                    setisLoading2(!isLoading2)
-                }else{
-                  setisLoading(!isLoading)
-                }
+                setisLoading2(false)
                 
             }, (error) => {
             console.log(error)
@@ -52,14 +48,10 @@ const ProfileResult = () => {
                 }}
             )
             .then((response) => {
-                // console.log(response);
+                console.log(response);
                 setBank(response.data.data)
                 console.log(bank);
-                if(isLoading4){
-                    setisLoading4(!isLoading4)
-                }else{
-                  setisLoading3(!isLoading3)
-                }
+                setisLoading4(false)
                 
             }, (error) => {
             console.log(error)
@@ -70,7 +62,7 @@ const ProfileResult = () => {
     return (
             <>
             {
-                isLoading && isLoading2 && isLoading3 && isLoading4 ?
+                isLoading2  && isLoading4 ?
                 <div className='flex items-center justify-center py-16'>
                     <div className="spinner-page"></div>
                 </div>:

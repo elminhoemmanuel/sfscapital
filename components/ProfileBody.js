@@ -61,13 +61,13 @@ const ProfileBody = ({user}) => {
                countries.push(item);
             })
             console.log(countries)
-            setisLoading(!isLoading)
+            setisLoading(false)
             
         }, (error) => {
           console.log(error)
         });      
                 
-    }, [])
+    }, [isLoading])
 
     useEffect(() => {
         obtainDetails('country',selectedCountry);
@@ -603,12 +603,12 @@ const ProfileBody = ({user}) => {
 
                         <div className='my-1 px-6'>
                             {
-                                hasError ==='Something went wrong' && <p className='text-xs text-red-500'>{hasError}, try again</p>
+                                hasError ==='Something went wrong' && <p className='text-sm text-red-500'>{hasError}, try again</p>
                             }
                         </div>
-                        <div className='my-1 px-6'>
+                        <div className='py-3 px-6'>
                             {
-                                success && success2 && <p className='text-xs text-didalla'>Profile successfully updated</p>
+                                success && success2 && <p className='text-sm text-didalla'>Profile successfully updated</p>
                             }
                         </div>
 

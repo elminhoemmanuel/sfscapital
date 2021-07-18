@@ -4,12 +4,112 @@ import DashSideNav from './DashSideNav'
 import {useRouter} from 'next/router'
 import PrimaryBtn from './PrimaryBtn'
 import Swal from 'sweetalert2'
+import useForm from './useForm'
+import axios from 'axios'
+
 
 const DashPlanCalc = ({ user, plan }) => {
 
+    const [isLoading, setisLoading] = useState(false);
+    const stateSchema = {
+        units:{value:1 , error:""},
+    }
+
+    const stateValidatorSchema ={
+        units:{
+            required:true,
+            validator:{
+                func: value=> /^(?=.*[a-zA-Z0-9]).{1,}$/.test(value),
+                error:"Units must be more than one character"
+            }
+        }, 
+        
+    }
+
+    const {values, errors, dirty, handleOnChange} = useForm(stateSchema, stateValidatorSchema);
+    const {units} = values
+
     const router = useRouter();
 
-    const [units, setUnits] = useState(1);
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        setisLoading(!isLoading);
+        let handler = PaystackPop.setup({
+            key: 'pk_test_7f7d5c671c445c64a1b9c62fffa0184c1e35829d',
+            email: user.email,
+            amount: (plan.cost_per_unit * units) *100,
+            onClose: function(){
+                Swal.fire({
+                    title: 'Oops!!',
+                    text: 'Something went wrong',
+                    icon: 'error',
+                    confirmButtonColor:"#2D5427",
+                })
+                .then((response) => {
+                        console.log(response);
+                        if(response.isConfirmed){
+                            setisLoading(false);
+                        }
+                        if(response.isDismissed){
+                            setisLoading(false);
+                        }
+                })
+            },
+            callback: function(response){
+              console.log(response);
+
+              const formdata ={
+                plan_id:plan.id,
+                reference:response.reference,
+                unit:units,
+                amount:plan.cost_per_unit * units
+             };
+
+             console.log(formdata)
+
+             const userToken = localStorage.getItem('userToken');
+
+             axios.post('https://api.cropsharesafrica.com/api/investment/create',formdata,{
+                headers: {
+                'Authorization': `Bearer ${userToken}`
+                }})
+            .then((response) => {
+                console.log(response);
+                Swal.fire({
+                    title: 'Transaction Success',
+                    text: 'You have successfully purchased the investment plan',
+                    icon: 'success',
+                    confirmButtonText: 'Go to Investments',
+                    confirmButtonColor:"#2D5427",
+                    allowOutsideClick:false,
+                })
+                .then((response) => {
+                    console.log(response);
+                    if(response.isConfirmed){
+                        router.replace('/dashboard/investments')
+                    }
+                  })
+                setisLoading(false);
+            }, (error) => {
+                console.log(error);
+                Swal.fire({
+                    title: 'Oops!!',
+                    text: 'Something went wrong, Please try again',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor:"#2D5427",
+                })
+                setisLoading(false);
+            });
+            
+
+            console.log('after axios')
+            setisLoading(false);
+            }
+            
+        });
+        handler.openIframe();
+    }
 
     return (
         <>
@@ -28,10 +128,14 @@ const DashPlanCalc = ({ user, plan }) => {
                                             name='units'
                                             id='units'
                                             value={units}
-                                            onChange={(e)=>{setUnits(e.target.value)}}
+                                            onChange={handleOnChange}
                                             placeholder='2'
                                             className=' w-full border border-greensec focus:border-greenpri rounded focus:outline-none p-3 text-sm'
                                 />
+                                {errors.units && dirty.units && (
+                                    <p className='text-red-500 text-xs'>{errors.units}</p>
+                                )}
+
                             </div>
                             <div>
                                 <p className='text-sm mb-3 '>The Cost per unit is:</p>
@@ -66,27 +170,12 @@ const DashPlanCalc = ({ user, plan }) => {
                         </div>
 
                         <div className='mt-8 mb-3'>
-                            <form onSubmit={(e)=>{
-                                e.preventDefault()
-                                let handler = PaystackPop.setup({
-                                    key: 'pk_test_7f7d5c671c445c64a1b9c62fffa0184c1e35829d',
-                                    email: user.email,
-                                    amount: (plan.cost_per_unit * units) *100,
-                                    onClose: function(){
-                                        Swal.fire({
-                                            title: 'Oops!!',
-                                            text: 'Something went wrong',
-                                            icon: 'error',
-                                            confirmButtonColor:"#2D5427",
-                                        })
-                                    },
-                                    callback: function(response){
-                                      console.log(response);
-                                    }
-                                });
-                                handler.openIframe();
-                            }}>
-                                <PrimaryBtn buttonText='Purchase' addStyle='bg-greenpri text-sm w-full' />
+                            <form onSubmit={handleSubmit}>
+                                {
+                                    units===0 || errors.units  ?
+                                    <PrimaryBtn buttonText='Confirm Purchase' addStyle='bg-greenpri text-sm w-full pointer-events-none opacity-50' /> :
+                                    <PrimaryBtn buttonText={isLoading ? <div className='flex items-center justify-center'><div className='spinner-white'></div></div> : 'Confirm Purchase'} addStyle='bg-greenpri text-sm w-full' />
+                                }
                             </form>
                         </div>
 

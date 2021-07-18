@@ -10,7 +10,7 @@ import WithdrawalsBody from './WithdrawalsBody';
 const DashHomeWithdrawals = () => {
 
     const router = useRouter();
-    const [hasWithdrawal, sethasWithdrawal] = useState(false)
+    const [hasWithdrawal, sethasWithdrawal] = useState(true)
 
     return (
         <>
