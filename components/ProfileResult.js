@@ -1,102 +1,172 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import PrimaryBtn from './PrimaryBtn'
+import useForm from './useForm'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input';
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 const ProfileResult = () => {
-    return (
-                    <div>
-                        <div className='px-6 py-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                            <div className='mb-4'>
-                                <p className='text-sm'>CropShares ID Number*</p>
-                                <p className='text-greenpri'>NCS21421412</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>First Name*</p>
-                                <p className='text-greenpri'>Emmanuel</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Last Name*</p>
-                                <p className='text-greenpri'>Amodu</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Other Name*</p>
-                                <p className='text-greenpri'>Omale</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Email*</p>
-                                <p className='text-greenpri'>Omale@gmail.com</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Phone Number*</p>
-                                <p className='text-greenpri'>+23409048079556</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Address*</p>
-                                <p className='text-greenpri'>FHA, NYANYA</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Date of Birth*</p>
-                                <p className='text-greenpri'>2019/06/13</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>State*</p>
-                                <p className='text-greenpri'>Kogi</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Country*</p>
-                                <p className='text-greenpri'>Nigeria</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Gender*</p>
-                                <p className='text-greenpri'>Male</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>State of Origin*</p>
-                                <p className='text-greenpri'>Male</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Next of Kin*</p>
-                                <p className='text-greenpri'>David Amodu</p>
-                            </div>
-                            <div className='mb-4'>
-                                <p className='text-sm'>Next of Kin Phone*</p>
-                                <p className='text-greenpri'>07803252125</p>
-                            </div>
-                        </div>
-                        <div className='px-6 py-3 '>
-                            <div className='border-b border-graybg py-3'><h1 className='text-lg text-greenpri '>Bank Details</h1></div>
-                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-3'>
-                                <div className='mb-4'>
-                                    <p className='text-sm'>Account Name*</p>
-                                    <p className='text-greenpri'>Emmanuel Amodu</p>
-                                </div>
-                                <div className='mb-4'>
-                                    <p className='text-sm'>Account Number*</p>
-                                    <p className='text-greenpri'>**********</p>
-                                </div>
-                                <div className='mb-4'>
-                                    <p className='text-sm'>Bank Name*</p>
-                                    <p className='text-greenpri'>GTBANK</p>
-                                </div>
-                                <div className='mb-4'>
-                                    <p className='text-sm'>Foreign Account Name</p>
-                                    <p className='text-greenpri'>Emmanuel Amodu</p>
-                                </div>
-                                <div className='mb-4'>
-                                    <p className='text-sm'>Foreign Account Number</p>
-                                    <p className='text-greenpri'>**********</p>
-                                </div>
-                                <div className='mb-4'>
-                                    <p className='text-sm'>Foreign Bank Name</p>
-                                    <p className='text-greenpri'>Bank Of America</p>
-                                </div>
-                                <div className='mb-4'>
-                                    <p className='text-sm'>Foreign Currency</p>
-                                    <p className='text-greenpri'>$</p>
-                                </div>
-                                
-                            </div>
-                        </div>
 
+    const [isLoading2, setisLoading2] = useState(true);
+    const [isLoading, setisLoading] = useState(true);
+    const [isLoading3, setisLoading3] = useState(true);
+    const [isLoading4, setisLoading4] = useState(true);
+    const [user, setUser] = useState()
+    const [bank, setBank] = useState()
+
+    useEffect(() => {
+
+        const userToken = localStorage.getItem('userToken');
+
+        axios.get(`https://api.cropsharesafrica.com/api/profile`, 
+            {
+                headers: {
+                'Authorization': `Bearer ${userToken}`
+                }}
+            )
+            .then((response) => {
+                // console.log(response);
+                setUser(response.data.data)
+                console.log(user);
+                if(isLoading2){
+                    setisLoading2(!isLoading2)
+                }else{
+                  setisLoading(!isLoading)
+                }
+                
+            }, (error) => {
+            console.log(error)
+        });       
+                
+    }, [isLoading2])
+
+    useEffect(() => {
+
+        const userToken = localStorage.getItem('userToken');
+
+        axios.get(`https://api.cropsharesafrica.com/api/bank_detail`, 
+            {
+                headers: {
+                'Authorization': `Bearer ${userToken}`
+                }}
+            )
+            .then((response) => {
+                // console.log(response);
+                setBank(response.data.data)
+                console.log(bank);
+                if(isLoading4){
+                    setisLoading4(!isLoading4)
+                }else{
+                  setisLoading3(!isLoading3)
+                }
+                
+            }, (error) => {
+            console.log(error)
+        });       
+                
+    }, [isLoading4])
+
+    return (
+            <>
+            {
+                isLoading && isLoading2 && isLoading3 && isLoading4 ?
+                <div className='flex items-center justify-center py-16'>
+                    <div className="spinner-page"></div>
+                </div>:
+                <div>
+                <div className='px-6 py-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                    <div className='mb-4'>
+                        <p className='text-sm'>CropShares ID Number*</p>
+                        <p className='text-greenpri'>NCS21421412</p>
                     </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>First Name*</p>
+                        <p className='text-greenpri'>{user.first_name}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Last Name*</p>
+                        <p className='text-greenpri'>{user.last_name}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Other Name*</p>
+                        <p className='text-greenpri'>{user.other_name}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Phone Number*</p>
+                        <p className='text-greenpri'>{user.phone}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Address*</p>
+                        <p className='text-greenpri'>{user.address}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Date of Birth*</p>
+                        <p className='text-greenpri'>{user.dob}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>State*</p>
+                        <p className='text-greenpri'>{user.city}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Country*</p>
+                        <p className='text-greenpri'>{user.country}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Gender*</p>
+                        <p className='text-greenpri'>{user.gender}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>State of Origin*</p>
+                        <p className='text-greenpri'>{user.state_of_origin}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Next of Kin*</p>
+                        <p className='text-greenpri'>{user.nok}</p>
+                    </div>
+                    <div className='mb-4'>
+                        <p className='text-sm'>Next of Kin Phone*</p>
+                        <p className='text-greenpri'>{user.nok_phone}</p>
+                    </div>
+                </div>
+                <div className='px-6 py-3 '>
+                    <div className='border-b border-graybg py-3'><h1 className='text-lg text-greenpri '>Bank Details</h1></div>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-3'>
+                        <div className='mb-4'>
+                            <p className='text-sm'>Account Name*</p>
+                            <p className='text-greenpri'>{bank.account_name}</p>
+                        </div>
+                        <div className='mb-4'>
+                            <p className='text-sm'>Account Number*</p>
+                            <p className='text-greenpri'>{bank.account_number}</p>
+                        </div>
+                        <div className='mb-4'>
+                            <p className='text-sm'>Bank Name*</p>
+                            <p className='text-greenpri'>{bank.bank_name}</p>
+                        </div>
+                        {/* <div className='mb-4'>
+                            <p className='text-sm'>Foreign Account Name</p>
+                            <p className='text-greenpri'>Emmanuel Amodu</p>
+                        </div>
+                        <div className='mb-4'>
+                            <p className='text-sm'>Foreign Account Number</p>
+                            <p className='text-greenpri'>**********</p>
+                        </div>
+                        <div className='mb-4'>
+                            <p className='text-sm'>Foreign Bank Name</p>
+                            <p className='text-greenpri'>Bank Of America</p>
+                        </div> */}
+                        <div className='mb-4'>
+                            <p className='text-sm'>Your Currency</p>
+                            <p className='text-greenpri'>{bank.currency}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            }
+            </>
     )
 }
 

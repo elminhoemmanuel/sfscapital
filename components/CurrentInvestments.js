@@ -6,7 +6,7 @@ import PrimaryBtn from './PrimaryBtn';
 
 const CurrentInvestments = () => {
 
-    const [hasInvested, setHasInvested] = useState(false)
+    const [hasInvested, setHasInvested] = useState(true)
 
     return (
         <div className='bg-white rounded '>
@@ -79,7 +79,7 @@ const CurrentInvestments = () => {
                             <Link href='/dashboard/plans'>
                                 <a >
                                     <PrimaryBtn buttonText='Start Investing' addStyle='bg-greenpri text-base'
-                                    onClick={()=>{router.push('/dashboard/plans')}}
+                                    onClick={()=>{router.replace('/dashboard/plans')}}
                                     />
                                 </a>
                             </Link>

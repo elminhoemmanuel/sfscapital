@@ -4,6 +4,7 @@ import useForm from './useForm'
 import PrimaryBtn from './PrimaryBtn'
 import {useRouter} from 'next/router'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 
 const Register = () => {
@@ -69,10 +70,34 @@ const Register = () => {
           .then((response) => {
             console.log(response.data);
             setIsLoading(false);
-            router.push('/login')
+            Swal.fire({
+                title: 'Registration successful',
+                text: 'check your email to verify your account and then login',
+                icon: 'success',
+                confirmButtonText: 'Login',
+                iconColor:"#90cc42",
+                confirmButtonColor:"#2D5427",
+              })
+              .then((response) => {
+                console.log(response);
+                if(response.isConfirmed){
+                    router.replace('/login')
+                }
+              })
+            
           }, (error) => {
             console.log(error.data);
             setIsLoading(false);
+            Swal.fire({
+                title: 'Oops!!',
+                text: 'Something went wrong, check that your email is not taken and your internet connection',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor:"#2D5427",
+              })
+              .then((response) => {
+                
+              })
             setresponsegotten('Something went wrong, ensure that your email is not already taken')
           });
 

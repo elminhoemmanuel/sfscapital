@@ -7,7 +7,7 @@ import HowToFund from './HowToFund';
 import DashPlans from './DashPlans';
 import ProfileBody from './ProfileBody';
 
-const DashHomeProfile = () => {
+const DashHomeProfile = ({user}) => {
 
     const router = useRouter();
 
@@ -16,7 +16,7 @@ const DashHomeProfile = () => {
         <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 bg-graybg'>
             <DashSideNav router={router} />
             <div className='md:col-span-4 lg:col-span-5 pt-6 pl-6 md:pl-52 lg:pl-60 pb-16 pr-6'>
-                <ProfileBody />
+                <ProfileBody user={user}/>
             </div>
         </div>
         </>

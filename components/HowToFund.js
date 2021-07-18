@@ -12,7 +12,7 @@ const HowToFund = () => {
     return (
         <div className='bg-white rounded '>
             <div className='border-b border-graybg px-6 py-4'>
-                <h1 className='text-lg md:text-xl text-greenpri'>Puchase a Plan</h1>
+                <h1 className='text-lg md:text-xl text-greenpri'>Purchase a Plan</h1>
             </div>
 
             <div className='px-6 pt-4 pb-2'>
@@ -33,7 +33,7 @@ const HowToFund = () => {
                 <Link href='/dashboard/plans'>
                     <a >
                         <PrimaryBtn buttonText='Start Investing' addStyle='bg-greenpri text-base'
-                        onClick={()=>{router.push('/dashboard/plans')}}
+                        onClick={()=>{router.replace('/dashboard/plans')}}
                         />
                     </a>
                 </Link>

@@ -50,8 +50,9 @@ const Login = () => {
           })
           .then((response) => {
             console.log(response.data);
+            localStorage.setItem('userToken',response.data.access_token)
             setIsLoading(false);
-            router.push('/dashboard')
+            router.replace('/dashboard')
           }, (error) => {
             console.log(error.data);
             setIsLoading(false);

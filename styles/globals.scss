@@ -137,15 +137,29 @@ html, body{
 }
 @keyframes s3 {to{transform: rotate(1turn)}}
 
-//for telephone input
-.PhoneInputInput, .PhoneInputCountry{
-    
+.spinner-page {
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:conic-gradient(#0000 10%,#90cc42);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation: s3 1s infinite linear;
 }
+@keyframes s3 {to{transform: rotate(1turn)}}
 
-.PhoneInputInput:focus{
-    outline: none;
-}
-
+//for placeholders
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #c2c1c1;
+    opacity: 1; /* Firefox */
+  }
+  
+  input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #cccccc;
+  }
+  
+  input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #cccccc;
+  }
 
 //media queries
 @media screen and (max-width:1025px){

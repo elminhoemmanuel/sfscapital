@@ -44,7 +44,7 @@ const NewPassword = () => {
             setIsloading(false)
             console.log(response.data);
             setresetMessage(response.data.message);
-            router.push('/login')
+            router.replace('/login')
         }, (error) => {
             setIsloading(false)
             console.log(error);
