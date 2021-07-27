@@ -16,6 +16,7 @@ module.exports = {
         cultured:'#EFF3F0',
         onyx:'#393E41',
         graybg:'#EBECF1',
+        paid:'#CCFFDD',
       }
     },
 

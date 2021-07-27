@@ -70,7 +70,7 @@ const ProfileResult = () => {
                 <div className='px-6 py-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                     <div className='mb-4'>
                         <p className='text-sm'>CropShares ID Number*</p>
-                        <p className='text-greenpri'>NCS21421412</p>
+                        <p className='text-greenpri'>{user.user.cropshares_id}</p>
                     </div>
                     <div className='mb-4'>
                         <p className='text-sm'>First Name*</p>
@@ -136,18 +136,22 @@ const ProfileResult = () => {
                             <p className='text-sm'>Bank Name*</p>
                             <p className='text-greenpri'>{bank.bank_name}</p>
                         </div>
-                        {/* <div className='mb-4'>
+                        <div className='mb-4'>
                             <p className='text-sm'>Foreign Account Name</p>
-                            <p className='text-greenpri'>Emmanuel Amodu</p>
+                            <p className='text-greenpri'>{bank.foreign_account_name}</p>
                         </div>
                         <div className='mb-4'>
                             <p className='text-sm'>Foreign Account Number</p>
-                            <p className='text-greenpri'>**********</p>
+                            <p className='text-greenpri'>{bank.foreign_account_number}</p>
                         </div>
                         <div className='mb-4'>
                             <p className='text-sm'>Foreign Bank Name</p>
-                            <p className='text-greenpri'>Bank Of America</p>
-                        </div> */}
+                            <p className='text-greenpri'>{bank.foreign_bank_name}</p>
+                        </div>
+                        <div className='mb-4'>
+                            <p className='text-sm'>IBAN</p>
+                            <p className='text-greenpri'>{bank.iban}</p>
+                        </div>
                         <div className='mb-4'>
                             <p className='text-sm'>Your Currency</p>
                             <p className='text-greenpri'>{bank.currency}</p>

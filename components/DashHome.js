@@ -7,9 +7,10 @@ import HowToFund from './HowToFund';
 import DashPlans from './DashPlans';
 import axios from 'axios'
 
-const DashHome = ({user}) => {
+const DashHome = ({user, invest}) => {
 
     const router = useRouter();
+    console.log(invest)
 
     return (
         <>
@@ -20,7 +21,7 @@ const DashHome = ({user}) => {
                         
                         <h1 className='text-xl md:text-3xl text-greenpri mb-6'>Hello {user.first_name} 👨‍🌾</h1>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-3 mb-4'>
-                            <CurrentInvestments />
+                            <CurrentInvestments invest={invest}/>
                             <HowToFund />
                         </div>
                         <DashPlans />

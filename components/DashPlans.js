@@ -63,7 +63,7 @@ const DashPlans = ({user}) => {
                             }}
                             className='focus:outline-none block' >
                                 <div className='block rounded-lg bg-white text-black shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110'>
-                                    <div className={`${item.plan} rounded-t-lg maize-plan bg-no-repeat bg-cover bg-center w-full h-52`}>
+                                    <div className={`${item.css_class} rounded-t-lg bg-no-repeat bg-cover bg-center w-full h-52`}>
                                     </div>
 
                                     <div className='px-4 py-8'>

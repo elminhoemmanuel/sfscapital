@@ -62,6 +62,33 @@ export default function Home() {
                 
     }, [isLoading2])
 
+    const [isLoading3, setisLoading3] = useState(true);
+    const [invest, setinvest] = useState([]);
+
+    useEffect(() => {
+
+        const userToken = localStorage.getItem('userToken');
+
+        axios.get(`https://api.cropsharesafrica.com/api/investment/user_investment`, 
+            {
+                headers: {
+                'Authorization': `Bearer ${userToken}`
+                }}
+            )
+            .then((response) => {
+                console.log(response);
+                response.data.data.map(item=>(
+                  invest.push(item)
+                ))
+                console.log(invest);
+                setisLoading3(false)
+                
+            }, (error) => {
+            console.log(error)
+        });       
+                
+    }, [isLoading3])
+
   return (
     <>
         <Head>
@@ -70,13 +97,13 @@ export default function Home() {
         </Head>
 
         {
-          isLoading && isLoading2 ?
+          isLoading && isLoading2 && isLoading3 ?
           <div className='flex items-center justify-center py-16'>
             <div className="spinner-page"></div>
           </div> :
           <div className='2xl:max-w-screen-2xl 2xl:mx-auto pt-20 relative'>
             <DashNav user={user}/>
-            <DashHome user={user} />
+            <DashHome user={user} invest={invest}/>
           </div>
         }
     </>

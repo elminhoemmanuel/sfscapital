@@ -95,10 +95,11 @@ const ProfileBody = ({user}) => {
         acctnumber:{value:0 , error:""},
         bankname:{value:"" , error:""},
         foreignacctname:{value:"" , error:""},
-        foreignacctnumber:{value:0 , error:""},
+        foreignacctnumber:{value:'' , error:""},
         foreignbankname:{value:"" , error:""},
         foreigncurrency:{value:"" , error:""},
         dob:{value:"" , error:""},
+        iban:{value:"" , error:""},
     }
 
     const stateValidatorSchema ={
@@ -176,7 +177,28 @@ const ProfileBody = ({user}) => {
             required:true,
             validator:{
                 func: value=> /^(?=.*[a-zA-Z0-9]).{1,}$/.test(value),
-                error:"Foreign Account must be more than one character"
+                error:"Must be more than one character"
+            }
+        },
+        foreignacctnumber:{
+            required:true,
+            validator:{
+                func: value=> /^(?=.*[a-zA-Z0-9]).{1,}$/.test(value),
+                error:"Must be more than one character"
+            }
+        },
+        foreignbankname:{
+            required:true,
+            validator:{
+                func: value=> /^(?=.*[a-zA-Z0-9]).{1,}$/.test(value),
+                error:"Must be more than one character"
+            }
+        },
+        iban:{
+            required:true,
+            validator:{
+                func: value=> /^(?=.*[a-zA-Z0-9]).{1,}$/.test(value),
+                error:"Must be more than one character"
             }
         },
         foreigncurrency:{
@@ -212,6 +234,7 @@ const ProfileBody = ({user}) => {
         foreigncurrency,
         dob,
         sog,
+        iban
     } = values;
 
     const handleSubmit = event => {
@@ -241,6 +264,10 @@ const ProfileBody = ({user}) => {
             account_name:acctname,
             account_number:acctnumber,
             bank_name:bankname,
+            foreign_bank_name:foreignbankname,
+            foreign_account_name:foreignacctname,
+            foreign_account_number:foreignacctnumber,
+            iban:iban,
             currency:foreigncurrency,
          };
 
@@ -526,7 +553,7 @@ const ProfileBody = ({user}) => {
                                     <p className='text-red-500 text-xs'>{errors.bankname}</p>
                                 )}
                             </div>
-                            {/* <div className='mb-4'>
+                            <div className='mb-4'>
                                 <div className='mb-1'><label htmlFor="foreignacctname" className='text-sm'>Foreign Account Name</label></div>
                                 <input type="text" 
                                     name='foreignacctname'
@@ -561,15 +588,29 @@ const ProfileBody = ({user}) => {
                                     id='foreignbankname'
                                     value={foreignbankname}
                                     onChange={handleOnChange}
-                                    placeholder='E.g Sterling Bank'
+                                    placeholder='Bank Of America'
                                     className=' w-full border border-greensec focus:border-greenpri rounded focus:outline-none p-3 text-sm'
                                 />
                                 {errors.foreignbankname && dirty.foreignbankname && (
                                     <p className='text-red-500 text-xs'>{errors.foreignbankname}</p>
                                 )}
-                            </div> */}
+                            </div>
                             <div className='mb-4'>
-                                <div className='mb-1'><label htmlFor="foreignbankname" className='text-sm'>Your Currency</label></div>
+                                <div className='mb-1'><label htmlFor="iban" className='text-sm'>IBAN</label></div>
+                                <input type="text" 
+                                    name='iban'
+                                    id='iban'
+                                    value={iban}
+                                    onChange={handleOnChange}
+                                    placeholder=''
+                                    className=' w-full border border-greensec focus:border-greenpri rounded focus:outline-none p-3 text-sm'
+                                />
+                                {errors.iban && dirty.iban && (
+                                    <p className='text-red-500 text-xs'>{errors.iban}</p>
+                                )}
+                            </div>
+                            <div className='mb-4'>
+                                <div className='mb-1'><label htmlFor="foreignbankname" className='text-sm'>Foreign Currency</label></div>
                                 <input type="text" 
                                     name='foreigncurrency'
                                     id='foreigncurrency'

@@ -12,7 +12,7 @@ const DashPlanCalc = ({ user, plan }) => {
 
     const [isLoading, setisLoading] = useState(false);
     const stateSchema = {
-        units:{value:1 , error:""},
+        units:{value:0.5 , error:""},
     }
 
     const stateValidatorSchema ={
@@ -57,7 +57,7 @@ const DashPlanCalc = ({ user, plan }) => {
             },
             callback: function(response){
               console.log(response);
-
+                console.log(units)
               const formdata ={
                 plan_id:plan.id,
                 reference:response.reference,

@@ -1,12 +1,9 @@
-import React, { useState , useEffect} from 'react'
-import { CurrentInvestmentsData } from './CurrentInvestmentsData';
-import Link from 'next/link';
-import { FaStopwatch , FaHandHoldingUsd , FaTag } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react'
+import ProgressBar from './ProgressBar';
 import PrimaryBtn from './PrimaryBtn';
-import { earningsData } from './EarningsData';
-import axios from 'axios'
+import Swal from 'sweetalert2'
 
-const InvestmentsBody = ({invest}) => {
+const InvestmentsBody = ({ invest }) => {
 
     console.log('invest', invest)
 
@@ -14,116 +11,155 @@ const InvestmentsBody = ({invest}) => {
 
     useEffect(() => {
         setunit(invest[0].unit)
-        
+
     }, [])
 
     console.log(unit)
 
+    const today = new Date().getTime()
+
+    const requestCashout = (e) =>{
+        e.preventDefault()
+        Swal.fire({
+            title: 'Success !!',
+            text: 'Your withdrawal request has been sent , expect your funds with 48 hours',
+            icon: 'success',
+            confirmButtonColor:"#90cc42",
+        })
+        
+    }
+    
+
     return (
-        <div className='bg-white rounded '>
-            <div className='border-b border-graybg px-6 py-3'>
-                <h1 className='text-lg md:text-xl text-greenpri'>Your Investments</h1>
-            </div>
+        <>
+            <div className='bg-white rounded mb-3'>
+                <div className='border-b border-graybg px-6 py-3'>
+                    <h1 className='text-lg md:text-xl text-greenpri'>Your Investments</h1>
+                </div>
 
-            <div className='px-6 py-3'>
-                <p className='text-sm mb-6'>Find below a list of your various investments.</p>
-                <div className='flex invest[0]s-center justify-between mb-4'>
-                    <div className='flex invest[0]s-center'>
-                        <div className='mr-2'>
-                            <button type='button' 
-                            className='text-sm p-3 rounded border border-greensec bg-transparent
+                <div className='px-6 py-3'>
+                    <p className='text-sm mb-6'>Find below a list of your various investments.</p>
+                    <div className='flex invest[0]s-center justify-between mb-4'>
+                        <div className='flex invest[0]s-center'>
+                            <div className='mr-2'>
+                                <button type='button'
+                                    className='text-sm p-3 rounded border border-greensec bg-transparent
                             hover:border-greenpri whitespace-nowrap'>
-                                PDF
-                            </button>
+                                    PDF
+                                </button>
+                            </div>
+                            <div>
+                                <button type='button'
+                                    className='text-sm p-3 rounded border border-greensec bg-transparent
+                            hover:border-greenpri whitespace-nowrap'>
+                                    Print
+                                </button>
+                            </div>
+
                         </div>
+
                         <div>
-                            <button type='button' 
-                            className='text-sm p-3 rounded border border-greensec bg-transparent
-                            hover:border-greenpri whitespace-nowrap'>
-                                Print
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <div>
-                            <input type="text" 
+                            <input type="text"
                                 name='searchtext'
                                 id='searchtext'
                                 placeholder='Search'
                                 className='placeholder-black w-full border border-greensec focus:border-greenpri rounded focus:outline-none p-3 text-sm'
                             />
+                        </div>
+
                     </div>
 
                 </div>
+            </div>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
+                {
+                    invest.map(item => (
+                        <div className='rounded bg-white '>
+                            <div className='flex items-center justify-between mb-2 p-5 border-b border-graybg'>
+                                <div className='flex items-center'>
+                                    <div className={`rounded-full ${item.plan.css_class} bg-no-repeat bg-cover bg-center w-8 h-8 mr-1`}>
+                                    </div>
+                                    <div>
+                                        <h1 className='text-sm font-bold'>{item.plan.name}</h1>
+                                        <h1 className='text-sm'>Units bought: <span className='font-bold'>{item.unit}</span></h1>
+                                    </div>
+                                </div>
+                                <div className='flex items-center'>
+                                    <h1>{item.paid === 1 ?
+                                        <span className='py-2 px-4 bg-paid rounded-full text-green-500'>{item.status}</span> :
+                                        <span className='py-2 px-4 bg-graybg rounded-full text-red-300 '>{item.status}</span>
+                                    }
+                                    </h1>
+                                </div>
+                            </div>
 
-                <div className='overflow-x-scroll'>
-                            <table className='text-sm text-didallabody bg-white p-2 w-full '>
-                                <tr className='border-b border-grayborder p-2'>
-                                    <th className='p-3 text-left'>
-                                        <p >S/N</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >CSA ID</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >Plan</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >Units</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >Unit Cost(₦)</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >Total Invested(₦)</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >Total ROI(₦)</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >Payout Total(₦)</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >Start Date</p>
-                                    </th>
-                                    {/* <th className='p-3 text-left'>
-                                        <p >Due Date</p>
-                                    </th> */}
-                                    <th className='p-3 text-left'>
-                                        <p >Status</p>
-                                    </th>
-                                    {/* <th className='p-3 text-left'>
-                                        <p >Withdrawal</p>
-                                    </th>
-                                    <th className='p-3 text-left'>
-                                        <p >Reinvest</p>
-                                    </th> */}
-                                </tr>
+                            <div className='p-5 border-b border-graybg grid gap-1 grid-cols-1 lg:grid-cols-2'>
+                                <div className='mb-2'>
+                                    <p className='text-sm'>Unit cost:</p>
+                                    <h3 className='text-sm font-bold'> ₦{item.plan.cost_per_unit}</h3>
+                                </div>
+                                <div className='mb-2'>
+                                    <p className='text-sm'>Total Invested:</p>
+                                    <h3 className='text-sm font-bold'> ₦{item.amount}</h3>
+                                </div>
+                                <div className='mb-2'>
+                                    <p className='text-sm'>Total ROI:</p>
+                                    <h3 className='text-sm font-bold'>{item.plan.roi * item.unit}%</h3>
+                                </div>
+                                <div className='mb-2'>
+                                    <p className='text-sm'>Cashout Total:</p>
+                                    <h3 className='text-sm font-bold'> ₦{item.amount}</h3>
+                                </div>
+                                <div className='mb-2'>
+                                    <p className='text-sm'>Start Date:</p>
+                                    <h3 className='text-sm font-bold'>
+                                        {new Intl.DateTimeFormat("en-GB", {
+                                            year: "numeric",
+                                            month: "long",
+                                            day: "2-digit"
+                                        }).format(new Date(item.created_at))
+                                        }
+                                    </h3>
+                                </div>
+                                <div className='mb-2'>
+                                    <p className='text-sm'>Due Date:</p>
+                                    <h3 className='text-sm font-bold'>
+                                        {new Intl.DateTimeFormat("en-GB", {
+                                                year: "numeric",
+                                                month: "long",
+                                                day: "2-digit"
+                                            }).format(new Date(item.due_date))
+                                        } 
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div className='flex items-center justify-between p-5'>
+                                <div className=''>
+                                    <ProgressBar 
+                                    percentage={
+                                        Math.round((((item.plan.duration * 31) - (new Date(item.due_date).getTime() - today)/ (1000 * 3600 * 24)) / (item.plan.duration*31)) * 100)
+                                    }
+                                    />
+                                </div>
+                                <div className=''>
+                                    <form action="" onSubmit={requestCashout}>
+                                    {
+                                        item.overdue === 0 ? <PrimaryBtn buttonText='Withdraw' addStyle='text-xs bg-greenpri pointer-events-none opacity-50' /> :
+
+                                        <PrimaryBtn  buttonText='Withdraw' addStyle='text-xs py-2 px-3 bg-greenpri' />
+                                    }
+                                    </form>
+                                </div>
                                 
-                                       <tr className='p-2'>
-                                           <td className='p-3 '>1</td>
-                                           <td className='p-3 '>{invest[0].ref}</td>
-                                           <td className='p-3 '>{invest[0].plan.name}</td>
-                                           <td className='p-3 '>{invest[0].unit}</td>
-                                           <td className='p-3 '>{invest[0].plan.cost_per_unit}</td>
-                                           <td className='p-3 '>{invest[0].plan.cost_per_unit*invest[0].unit}</td>
-                                           <td className='p-3 '>{invest[0].plan.roi*invest[0].unit}%</td>
-                                           <td className='p-3 '>{invest[0].plan.cost_per_unit*invest[0].unit}</td>
-                                           <td className='p-3 '>{invest[0].plan.created_at.substr(0,10)}</td>
-                                           {/* <td className='p-3 '>{invest[0].dueDate}</td> */}
-                                           <td className='p-3 text-greenpri'>{invest[0].status}</td>
-                                           {/* <td className='p-3 '>{invest[0].withdraw}</td>
-                                           <td className='p-3 '>{invest[0].reinvest}</td> */}
-                                       </tr>
-                                   
-                            </table>
-                </div>
+                            </div>
+
+                        </div>
+                    ))
+                }
 
             </div>
-            
-                    
-        </div>
+        </>
     )
 }
 

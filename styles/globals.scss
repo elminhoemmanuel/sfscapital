@@ -53,10 +53,10 @@ html, body{
 .cabbage-plan{
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/cabbage.jpg");
 }
-.mech-plan{
+.mechanization-plan{
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/about2.jpg");
 }
-.cassava-plan{
+.cassave-plan{
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/cassava.jpg");
 }
 
@@ -160,6 +160,22 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   input::-ms-input-placeholder { /* Microsoft Edge */
     color: #cccccc;
   }
+
+    // progress bar
+    .progress-bar {
+        position: relative;
+        height: 12px;
+        width: 200px;
+        border-radius: 50px;
+        border: 1px solid #333;
+    }
+    
+    .filler {
+        background: #90cc42;
+        height: 100%;
+        border-radius: inherit;
+        transition: width .2s ease-in;
+    }
 
 //media queries
 @media screen and (max-width:1025px){
