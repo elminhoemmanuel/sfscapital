@@ -25,13 +25,11 @@ export default function Home() {
                 }}
             )
             .then((response) => {
-                // console.log(response);
+                console.log(response);
                 setUser(response.data)
                 console.log(user);
-                if(isLoading2){
-                    setisLoading2(!isLoading2)
-                }else{
-                  if(user){
+                setisLoading2(false)
+                if(user){
                     if(user.reg_completed===0){
                       Swal.fire({
                         title: 'Welcome Cropsharer',
@@ -52,8 +50,6 @@ export default function Home() {
                         }
                       })
                     }
-                  }
-                  setisLoading(!isLoading)
                 }
                 
             }, (error) => {
@@ -87,7 +83,7 @@ export default function Home() {
             console.log(error)
         });       
                 
-    }, [isLoading3])
+    }, [])
 
   return (
     <>
@@ -97,7 +93,7 @@ export default function Home() {
         </Head>
 
         {
-          isLoading && isLoading2 && isLoading3 ?
+           isLoading2 && isLoading3 ?
           <div className='flex items-center justify-center py-16'>
             <div className="spinner-page"></div>
           </div> :
