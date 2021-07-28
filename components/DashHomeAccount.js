@@ -123,7 +123,7 @@ const DashHomeAccount = ({ user }) => {
                 console.log(response);
                 Swal.fire({
                     title: 'Success !!',
-                    text: 'Your Password has been updated',
+                    text: 'Your Email has been updated',
                     icon: 'success',
                     confirmButtonText: 'OK',
                     iconColor: "#90cc42",
