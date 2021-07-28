@@ -68,7 +68,7 @@ const Login = () => {
         <div className='bg-graybg pt-16 pb-80'>
             <div className='bg-white shadow-xl rounded p-8 w-4/5 md:w-3/5 lg:w-2/5 mx-auto'>
                 <div className='flex justify-center items-center mb-6'>
-                    <img className='h-16' src="/images/logo.png" alt="cropshares logo" />
+                    <img className='h-12 w-12' src="/images/logo.png" alt="cropshares logo" />
                 </div>
 
                 <form action="" onSubmit={handleSubmit}>

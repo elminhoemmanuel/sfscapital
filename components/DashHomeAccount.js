@@ -16,6 +16,7 @@ const DashHomeAccount = ({ user }) => {
         currentpassword: { value: "", error: "" },
         newpassword: { value: "", error: "" },
         confnewpassword: { value: "", error: "" },
+        email:{value:"" , error:""},
     }
 
     const stateValidatorSchema = {
@@ -39,11 +40,18 @@ const DashHomeAccount = ({ user }) => {
                 func: value => /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(value),
                 error: "password must be up to 6 characters and contain atleast one special character e.g '@,#,$,%,^,&,?,>,<'"
             }
-        }
+        },
+        email:{
+            required:true,
+            validator:{
+                func: value=> /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(value),
+                error:"invalid email format"
+            }
+        },
     }
 
     const { values, errors, dirty, handleOnChange } = useForm(stateSchema, stateValidatorSchema)
-    const { currentpassword, newpassword, confnewpassword } = values;
+    const { currentpassword, newpassword, confnewpassword, email } = values;
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitting2, setIsSubmitting2] = useState(false);
@@ -80,6 +88,50 @@ const DashHomeAccount = ({ user }) => {
 
             }, (error) => {
                 setIsSubmitting(false)
+                console.log(error);
+                Swal.fire({
+                    title: 'Oops!!',
+                    text: 'Something went wrong , please try again',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: "#2D5427",
+                })
+
+            });
+
+    }
+
+    const handleSubmitEmail = event => {
+        event.preventDefault()
+        
+        setIsSubmitting2(!isSubmitting2);
+
+        const userToken = localStorage.getItem('userToken');
+
+        const formdata2 = {
+            email: email,
+            
+        };
+
+        axios.post('https://api.cropsharesafrica.com/api/users/change_email', formdata2, {
+            headers: {
+                'Authorization': `Bearer ${userToken}`
+            }
+        })
+            .then((response) => {
+                setIsSubmitting2(false)
+                console.log(response);
+                Swal.fire({
+                    title: 'Success !!',
+                    text: 'Your Password has been updated',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                    iconColor: "#90cc42",
+                    confirmButtonColor: "#2D5427",
+                })
+
+            }, (error) => {
+                setIsSubmitting2(false)
                 console.log(error);
                 Swal.fire({
                     title: 'Oops!!',
@@ -166,6 +218,39 @@ const DashHomeAccount = ({ user }) => {
                                         <PrimaryBtn buttonText='Confirm' addStyle='bg-greenpri text-sm pointer-events-none opacity-50' /> :
 
                                         <PrimaryBtn buttonText={isSubmitting ? <div className='spinner-white'></div> : 'Confirm'} addStyle='bg-greenpri text-sm' />
+                                }
+                            </div>
+                        </form>
+                    </div>
+
+                    <div className='rounded bg-white'>
+                        <div className='border-b border-graybg px-6 py-3'>
+                            <h1 className='text-sm md:text-xl text-greenpri'>Change your Email</h1>
+                        </div>
+
+                        <form onSubmit={handleSubmitEmail}>
+                            <div className='text-sm px-6 py-3 grid grid-cols-1 md:grid-cols-2 gap-5'>
+                                <div className='mb-4'>
+                                    <div className='mb-1'><label htmlFor="email" className='text-sm'>Enter Your New email</label></div>
+                                    <input type="email"
+                                        name='email'
+                                        id='email'
+                                        value={email}
+                                        onChange={handleOnChange}
+                                        className=' w-full border border-greensec focus:border-greenpri rounded focus:outline-none p-3 text-sm'
+                                    />
+                                    {errors.email && dirty.email && (
+                                        <p className='text-red-500 text-xs'>{errors.email}</p>
+                                    )}
+                                </div>
+                            </div>
+                            <div className='px-6 py-3 mb-3'>
+                                {
+                                    email.length === 0 || errors.email  ?
+
+                                        <PrimaryBtn buttonText='Confirm' addStyle='bg-greenpri text-sm pointer-events-none opacity-50' /> :
+
+                                        <PrimaryBtn buttonText={isSubmitting2 ? <div className='spinner-white'></div> : 'Confirm'} addStyle='bg-greenpri text-sm' />
                                 }
                             </div>
                         </form>

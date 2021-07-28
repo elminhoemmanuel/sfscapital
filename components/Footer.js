@@ -9,7 +9,7 @@ const Footer = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10'>
                 <div>
                     <div className=''>
-                        <Link href="/"><a><img alt="cropshares-logo" src='/images/logo.png' className='pl-0 h-20 w-40 
+                        <Link href="/"><a><img alt="cropshares-logo" src='/images/logo.png' className='pl-0 h-10 w-10 
                         ' /></a>
                         </Link>
                     </div>

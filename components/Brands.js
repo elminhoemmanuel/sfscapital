@@ -21,7 +21,7 @@ const Brands = () => {
                 </div>
 
                 <div className='flex justify-center items-center'>
-                    <img className='w-40 h-32' src="/images/leadway.png" alt="leadway logo"/>
+                    <img className='w-52 h-32' src="/images/royallogo.jpg" alt="royal exchange logo"/>
                 </div>
 
                 <div className='flex justify-center items-center'>

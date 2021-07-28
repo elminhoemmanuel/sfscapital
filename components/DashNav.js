@@ -130,7 +130,7 @@ const DashNav = ({user}) => {
                             <button onClick={handleClick} className='mr-4 block focus:outline-none outline-none' type='button'><svg className="w-8 h-8 text-greenpri hover:bg-greensec" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg></button>
                         </div>
                         <div className='pl-0'>
-                            <Link href="/"><a><img alt="cropshares-logo" src='/images/logo.png' className='pl-0 h-10 w-28 md:h-12 md:w-40 
+                            <Link href="/"><a><img alt="cropshares-logo" src='/images/logo.png' className='pl-0 h-10 w-10 md:h-12 md:w-12 
                             ' /></a>
                             </Link>
                         </div>
@@ -141,7 +141,7 @@ const DashNav = ({user}) => {
     
                         <button
                         onClick={()=>{router.push('/dashboard/account')}}
-                        type='button' className='text-greenpri text-sm flex items-center'>
+                        type='button' className='text-greenpri text-sm flex items-center focus:outline-none'>
                             <div className='text-black'>{user.first_name}</div>
                             <div className=''>
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>

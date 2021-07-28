@@ -81,7 +81,7 @@ const Navbar = ({activePage}) => {
                 <div className='flex flex-row justify-start items-center text-base'>
                     
                     <div className='pl-0'>
-                        <Link href="/"><a><img alt="cropshares-logo" src='/images/logo.png' className='pl-0 h-10 w-28 md:h-12 md:w-40 
+                        <Link href="/"><a><img alt="cropshares-logo" src='/images/logo.png' className='pl-0 h-10 w-10 md:h-12 md:w-12 
                         ' /></a>
                         </Link>
                     </div>
