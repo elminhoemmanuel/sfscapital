@@ -6,7 +6,7 @@ import PrimaryBtn from './PrimaryBtn';
 
 const CurrentInvestments = ({invest}) => {
 
-    console.log(invest)
+    // console.log(invest)
 
     const [hasInvested, setHasInvested] = useState(true)
 

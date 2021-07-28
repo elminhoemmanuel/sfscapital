@@ -93,7 +93,7 @@ const InvestmentsBody = ({ invest }) => {
                                 </div>
                             </div>
 
-                            <div className='p-5 border-b border-graybg grid gap-1 grid-cols-1 lg:grid-cols-2'>
+                            <div className='p-5 border-b border-graybg grid gap-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-2'>
                                 <div className='mb-2'>
                                     <p className='text-sm'>Unit cost:</p>
                                     <h3 className='text-sm font-bold'> ₦{item.plan.cost_per_unit}</h3>
@@ -134,8 +134,9 @@ const InvestmentsBody = ({ invest }) => {
                                 </div>
                             </div>
 
-                            <div className='flex items-center justify-between p-5'>
-                                <div className=''>
+                            <div className='flex flex-col md:flex-row items-center justify-center md:justify-between p-5'>
+                                <div className='mb-3'>
+                                    <p className='text-sm'>Progress:</p>
                                     <ProgressBar 
                                     percentage={
                                         Math.round((((item.plan.duration * 31) - (new Date(item.due_date).getTime() - today)/ (1000 * 3600 * 24)) / (item.plan.duration*31)) * 100)

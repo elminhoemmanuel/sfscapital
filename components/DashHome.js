@@ -10,7 +10,7 @@ import axios from 'axios'
 const DashHome = ({user, invest}) => {
 
     const router = useRouter();
-    console.log(invest)
+    // console.log(invest)
 
     return (
         <>
