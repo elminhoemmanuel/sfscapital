@@ -139,14 +139,15 @@ const InvestmentsBody = ({ invest }) => {
                                     <p className='text-sm'>Progress:</p>
                                     <ProgressBar 
                                     percentage={
-                                        Math.round((((item.plan.duration * 31) - (new Date(item.due_date).getTime() - today)/ (1000 * 3600 * 24)) / (item.plan.duration*31)) * 100)
+                                        // Math.round((((item.plan.duration * 31) - (new Date(item.due_date).getTime() - today)/ (1000 * 3600 * 24)) / (item.plan.duration*31)) * 100)
+                                        100
                                     }
                                     />
                                 </div>
                                 <div className=''>
                                     <form action="" onSubmit={requestCashout}>
                                     {
-                                        item.overdue === 0 ? <PrimaryBtn buttonText='Withdraw' addStyle='text-xs bg-greenpri pointer-events-none opacity-50' /> :
+                                        false? <PrimaryBtn buttonText='Withdraw' addStyle='text-xs bg-greenpri pointer-events-none opacity-50' /> :
 
                                         <PrimaryBtn  buttonText='Withdraw' addStyle='text-xs py-2 px-3 bg-greenpri' />
                                     }
