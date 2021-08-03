@@ -15,6 +15,7 @@ module.exports = {
         tumbasash:'#7b8eb5',
         inputgrey:'#f6faff',
         greybg:'#f6f8fe',
+        tumbasorange:'#fff2ee',
       }
     },
 

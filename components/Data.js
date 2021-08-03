@@ -24,3 +24,24 @@ export const table = [
         viewers:'18k viewers'
     },
 ]
+export const orders = [
+    {
+        id:1,
+        image:'/images/headphone.jpg',
+        name:'Redmi 4X',
+        
+    },
+    {
+        id:2,
+        image:'/images/iphone.png',
+        name:'Acer E1-421',
+        
+    },
+    {
+        id:3,
+        image:'/images/nikoncamera.jpg',
+        name:'Nikon D3500',
+        
+    },
+]
+

@@ -1,6 +1,5 @@
 import React from 'react'
 import { AiFillCompass } from "react-icons/ai";
-import { RiShieldStarFill } from "react-icons/ri";
 import { AiFillAppstore, AiFillFile } from "react-icons/ai";
 import { BsBagFill } from "react-icons/bs";
 import { RiSettings3Fill } from "react-icons/ri";
