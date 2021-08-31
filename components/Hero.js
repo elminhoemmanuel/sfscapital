@@ -3,25 +3,25 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const Hero = () => {
 
-    const [imgNumber, setImgNumber] = useState(1)
-    const max = 10
+    // const [imgNumber, setImgNumber] = useState(1)
+    // const max = 10
 
-    useEffect(() => {
-        setTimeout(() => {
-            setImgNumber(Math.floor(Math.random() * max) + 1);
-        }, 7000);
-    }, [ imgNumber ])
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setImgNumber(Math.floor(Math.random() * max) + 1);
+    //     }, 7000);
+    // }, [ imgNumber ])
 
-    const styling = `hero-height hero1 bg-cover bg-no-repeat flex flex-col pt-8 justify-center`
+    const styling = `hero-height hero1 bg-cover bg-no-repeat flex flex-col pt-8 px-6 justify-center`
     
     return (
         <div className={styling}>
-            <div className="mb-8 text-left w-1/2 mx-auto">
-                <h1 className='text-white font-bold tracking-wide text-lg md:text-xl lg:text-4xl'>The best free stock photos</h1>
-                <h1 className='text-white font-bold tracking-wide text-lg md:text-xl lg:text-4xl'>shared by talented creators.</h1>
+            <div className="mb-8 text-left w-full md:w-4/5 lg:w-1/2 mx-auto">
+                <h1 className='text-white font-bold tracking-wide text-4xl'>The best free stock photos</h1>
+                <h1 className='text-white font-bold tracking-wide text-4xl'>shared by talented creators.</h1>
             </div>
-            <form className="w-1/2 mx-auto text-left relative">
-                <input type="text" name="searchQuery" 
+            <form className="w-full md:w-4/5 lg:w-1/2 mx-auto text-left relative">
+                <input type="text" name="searchQuery" required
                 className="block w-full bg-bexash rounded-lg py-4 px-4 focus:outline-none placeholder-gray-600"
                 placeholder="Search for free photos"
                 />

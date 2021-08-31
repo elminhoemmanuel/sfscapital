@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { nameReducer } from './name';
+import { tabsReducer } from './tabs';
 import {  persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
@@ -12,7 +12,7 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    name: nameReducer,
+    tabs: tabsReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

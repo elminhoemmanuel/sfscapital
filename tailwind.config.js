@@ -10,7 +10,8 @@ module.exports = {
        }),
       colors: {
         bexels:"#05A081",
-        bexash:"#F8F9F9"
+        bexash:"#F8F9F9",
+        nav:"#232A34"
       }
     },
 
