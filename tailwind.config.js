@@ -9,13 +9,7 @@ module.exports = {
         'hero-bg': "url('/images/farmhero.jpg')",
        }),
       colors: {
-        tumbasborder:'#e6effc',
-        tumbas:'#347ae2',
-        tumbasblack:'#243970',
-        tumbasash:'#7b8eb5',
-        inputgrey:'#f6faff',
-        greybg:'#f6f8fe',
-        tumbasorange:'#fff2ee',
+        
       }
     },
 
