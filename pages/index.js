@@ -1,8 +1,17 @@
 import Head from 'next/head'
 import React, { useState, useEffect } from 'react'
+import { setName } from '../redux/actions/name';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Home() {
+
+  const dispatch = useDispatch();
+  const { personName } = useSelector((state) => state.name);
+
+  useEffect(() => {
+    dispatch(setName("Amodu"))
+  }, [dispatch])
 
   return (
     <>
@@ -12,7 +21,8 @@ export default function Home() {
         </Head>
 
         <div className='p-6 text-red-500'>
-          <p>Hello Bexels</p> 
+          
+          
         </div>
     </>
   )
