@@ -6,7 +6,7 @@ const TabsDisplay = () => {
     const { loading, photos , error } = useSelector((state) => state.tabs);
 
     return (
-        <div className="px-6 py-6">
+        <div className="px-6 py-12">
             {
                 loading ?
                 <div className="flex items-center justify-center">

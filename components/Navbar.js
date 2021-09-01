@@ -1,19 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ImCheckboxChecked } from "react-icons/im";
 import Link from 'next/link'
 import PriBtn from './PriBtn'
+import { useRouter } from 'next/router'
+import SearchField from './SearchField';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
 
+    const router = useRouter();
     const [nav, setNav] = useState(false);
     const [menuShow, setMenuShow] = useState(false);
+    const { page } = useSelector((state) => state.search);
 
     const changeBackground = () => {
-        if (window.scrollY >= 80) {
-            setNav(true)
-        } else {
-            setNav(false)
-        }
+            if (window.scrollY >= 80) {
+                setNav(true)
+            } else {
+                setNav(false)
+            }
     }
 
     const handleClick = () => {
@@ -26,7 +31,13 @@ const Navbar = () => {
         document.body.style.overflowY = 'visible';
     }
 
-    window.addEventListener("scroll", changeBackground)
+    window.addEventListener("scroll", changeBackground);
+
+    // useEffect(() => {
+    //     if (router.pathname.includes("/search")) {
+    //         setNav(true)
+    //     }
+    // }, [])
 
     return (
 
@@ -34,8 +45,8 @@ const Navbar = () => {
         <>
 
             {/* mobile screens vertical nav */}
-            <div className={menuShow ? 'mobile-box-show flex shadow-xl flex-col lg:hidden bg-nav text-white w-full h-full fixed top-0 z-50 pt-8 max-w-screen-2xl transition'
-                : 'mobile-box flex shadow-xl flex-col lg:hidden bg-nav text-white w-0 h-full fixed top-0  z-50 pt-8 max-w-screen-2xl '}>
+            <div className={menuShow ? 'mobile-box-show flex shadow-xl  flex-col lg:hidden bg-nav text-white w-full h-full fixed top-0 z-50 pt-8 max-w-screen-2xl transition'
+                : 'mobile-box flex shadow-xl  flex-col lg:hidden bg-nav text-white w-0 h-full fixed top-0  z-50 pt-8 max-w-screen-2xl '}>
                 <div className=''>
                     <div className='lg:hidden flex flex-row justify-end mb-6 px-2'>
                         <button onClick={handleClickMobile} className='block focus:outline-none outline-none' type='button'><svg className="w-8 h-8 text-white hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg></button>
@@ -63,21 +74,26 @@ const Navbar = () => {
 
             {/* Navigation Bar on large screens */}
             <nav
-                className={!nav ? 'flex items-center justify-between bg-transparent px-6 fixed top-0 left-0 w-full h-auto' :
-                    'flex items-center justify-between bg-nav px-6 fixed top-0 left-0 w-full h-auto'
+                className={ nav || page === "search"  ? 'flex items-center justify-between bg-nav px-3 md:px-6 fixed top-0 left-0 w-full h-auto z-30' :
+                    'flex items-center justify-between bg-transparent px-3 md:px-6 fixed top-0 left-0 w-full h-auto z-30'
                 }>
 
                 {/* Left side of Navigation Bar */}
-                <Link href="/">
-                    <a className='flex items-center py-4'>
-                        <div className='mr-4'>
-                            <ImCheckboxChecked className="text-bexels h-10 w-10" />
-                        </div>
-                        <div>
-                            <p className="text-white font-bold text-base">Bexels</p>
-                        </div>
-                    </a>
-                </Link>
+                <div className="flex items-center w-5/6 md:w-4/5">
+                    <Link href="/">
+                        <a className='flex items-center py-4 mr-4'>
+                            <div className='mr-2 md:mr-4'>
+                                <ImCheckboxChecked className="text-bexels h-10 w-10" />
+                            </div>
+                            <div className="hidden lg:block">
+                                <p className="text-white font-bold text-base">Bexels</p>
+                            </div>
+                        </a>
+                    </Link>
+                    <div className='w-5/6 md:w-3/5'>
+                        { page === "search" && <SearchField /> }
+                    </div>
+                </div>
 
                 {/* Right side of Navigation Bar */}
                 <div className="flex items-center py-4">
