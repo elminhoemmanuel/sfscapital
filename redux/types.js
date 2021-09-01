@@ -7,3 +7,4 @@ export const SET_ERROR = "SET_ERROR"
 
 //Types for search functionality
 export const SET_PAGE = "SET_PAGE"
+export const SET_QUERY = "SET_QUERY"

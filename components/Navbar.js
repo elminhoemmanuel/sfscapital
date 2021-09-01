@@ -81,7 +81,7 @@ const Navbar = () => {
                 {/* Left side of Navigation Bar */}
                 <div className="flex items-center w-5/6 md:w-4/5">
                     <Link href="/">
-                        <a className='flex items-center py-4 mr-4'>
+                        <a className='flex items-center py-4 mr-2 md:mr-8'>
                             <div className='mr-2 md:mr-4'>
                                 <ImCheckboxChecked className="text-bexels h-10 w-10" />
                             </div>

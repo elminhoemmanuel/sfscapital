@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-const TabsDisplay = () => {
+const SearchDisplay = () => {
 
-    const { loading, photos , error } = useSelector((state) => state.tabs);
+    const dispatch = useDispatch();
+    const { loading, error , queryValue, photos } = useSelector((state) => state.search);
 
     return (
-        <div className="px-3 md:px-6 py-12">
+        <div className="px-6">
             {
                 loading ?
                 <div className="flex items-center justify-center">
@@ -41,4 +42,4 @@ const TabsDisplay = () => {
     )
 }
 
-export default TabsDisplay
+export default SearchDisplay
