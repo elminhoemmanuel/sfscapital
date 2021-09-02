@@ -1,4 +1,12 @@
-import { SET_PAGE, SET_QUERY, START_FETCH, STOP_FETCH, SET_PHOTOS, SET_ERROR } from "../types";
+import { 
+  SET_PAGE, 
+  SET_QUERY, 
+  START_FETCH, 
+  STOP_FETCH, 
+  SET_PHOTOS, 
+  SET_ERROR,
+  SET_PAGINATION
+ } from "../types";
 
 
 const initialState = {
@@ -7,7 +15,8 @@ const initialState = {
   loading: false,
   photosObj: {},
   photos: [],
-  error: ""
+  error: "",
+  currentPage:1
 };
 
 export const searchReducer = (state = initialState, action) => {
@@ -22,6 +31,11 @@ export const searchReducer = (state = initialState, action) => {
         ...state,
         queryValue: action.payload
       };
+    case SET_PAGINATION:
+      return {
+        ...state,
+        currentPage: action.payload
+      };
 
     case SET_PHOTOS:
       return {
@@ -32,7 +46,7 @@ export const searchReducer = (state = initialState, action) => {
     case SET_ERROR:
       return {
         ...state,
-        error: "Something went wrong please try again!"
+        error: "Something went wrong, check your internet connection and search value and try again!"
       };
     case START_FETCH:
       return {

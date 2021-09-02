@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import router, { useRouter } from "next/router";
 import { setPage, fetchSearchPictures } from '../redux/actions/search'
 import SearchDisplay from '../components/SearchDisplay';
+import Pagination from '../components/Pagination';
 
 
 export default function Search() {
@@ -11,17 +12,22 @@ export default function Search() {
     const { query } = useRouter(null);
     const [field, setField] = useState(null)
     const dispatch = useDispatch();
-    const { page, queryValue } = useSelector((state) => state.search);
+    const { page, queryValue, currentPage } = useSelector((state) => state.search);
 
     useEffect(() => {
         dispatch(setPage("search", () => { }));
+        let data = {}
+        data.queryField = queryValue;
+        data.pageValue = currentPage;
+        dispatch(fetchSearchPictures(data, () => { }));
     }, [])
 
     useEffect(() => {
         let data = {}
         data.queryField = queryValue;
+        data.pageValue = currentPage;
         dispatch(fetchSearchPictures(data, () => { }));
-    }, [queryValue])
+    }, [ queryValue, currentPage ])
 
     useEffect(() => {
         setField(query.value)
@@ -43,6 +49,10 @@ export default function Search() {
 
                 <div className="py-8 px-3 md:px-6">
                     <SearchDisplay />
+                </div>
+
+                <div className="py-4 px-3 md:px-6">
+                    <Pagination />
                 </div>
                 
             </div>

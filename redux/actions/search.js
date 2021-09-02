@@ -1,4 +1,13 @@
-import { SET_PAGE, SET_QUERY, START_FETCH, STOP_FETCH , SET_PHOTOS, SET_ERROR } from "../types";
+import { 
+    SET_PAGE, 
+    SET_QUERY, 
+    START_FETCH, 
+    STOP_FETCH , 
+    SET_PHOTOS, 
+    SET_ERROR, 
+    SET_PAGINATION 
+} from "../types";
+
 import axios from 'axios'
 
 //action to set active page
@@ -11,12 +20,17 @@ export const setQuery = (query, cb) => (dispatch) => {
     dispatch({ type: SET_QUERY, payload: query })
 }
 
+//action for pagination
+export const setPagination = (pageValue, cb) => (dispatch) => {
+    dispatch({ type: SET_PAGINATION, payload: pageValue })
+}
+
 //action to fetch pictures for each search parameter
 export const fetchSearchPictures = (data, cb) => (dispatch) => {
 
     dispatch({ type: START_FETCH })
 
-    axios.get(`https://api.pexels.com/v1/search?query=${data.queryField}&page=1&per_page=16`,
+    axios.get(`https://api.pexels.com/v1/search?query=${data.queryField}&page=${data.pageValue}&per_page=10`,
         {
             headers: {
                 'Authorization': `563492ad6f9170000100000105a12733356e4d7ba44d5a9ad8277542`

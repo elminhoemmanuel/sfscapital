@@ -26,9 +26,9 @@ const SearchField = () => {
         setSearchQuery(e.target.value)  
     }
 
-    useEffect(() => {
-        dispatch(setQuery(searchQuery, ()=>{}))
-    }, [searchQuery])
+    // useEffect(() => {
+    //     dispatch(setQuery(searchQuery, ()=>{}))
+    // }, [searchQuery])
 
     return (
         <form
