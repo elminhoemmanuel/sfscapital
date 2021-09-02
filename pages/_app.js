@@ -25,9 +25,11 @@ function MyApp({ Component, pageProps }) {
       
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
+          <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
           <Layout>
             <Component {...pageProps} />
           </Layout>
+          </div>
         </PersistGate>
       </Provider>
       

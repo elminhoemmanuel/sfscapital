@@ -42,7 +42,7 @@ export default function Search() {
                 <meta name="keywords" content="Bexels" />
             </Head>
 
-            <div className='pt-32 pb-20'>
+            <div className='pt-32 pb-20 2xl:max-w-screen-2xl 2xl:mx-auto'>
                 <div>
                     <p className="text-2xl md:text-4xl text-black text-center">Search results for {queryValue}</p>
                 </div>

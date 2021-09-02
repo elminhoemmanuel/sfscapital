@@ -24,7 +24,7 @@ export default function Home() {
         <meta name="keywords" content="Bexels" />
       </Head>
 
-      <div className=''>
+      <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
         <Hero />
         <TabsSection />
         <TabsDisplay />
