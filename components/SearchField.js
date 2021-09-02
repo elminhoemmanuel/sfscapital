@@ -49,10 +49,14 @@ const SearchField = () => {
             <input type="text" name="searchQuery" required
                 value={searchQuery}
                 onChange={handleChange}
-                className="block w-full bg-bexash rounded-lg py-2 md:py-4 px-2 md:px-4 focus:outline-none placeholder-gray-600"
+                className="search-box block w-full bg-bexash rounded-lg py-3 md:py-4 px-3 md:px-4 focus:outline-none placeholder-gray-600"
                 placeholder={page === "search" ? "" : "Search for free photos"}
             />
-            <AiOutlineSearch className='h-6 w-6 absolute top-2 md:top-4 right-4 md:right-7 text-gray-600' />
+            {
+                page === "search" ? <AiOutlineSearch className='h-6 w-6 absolute top-3 md:top-4 right-4 md:right-7 lg:right-28 text-gray-600' /> : 
+                <AiOutlineSearch className='h-6 w-6 absolute top-3 md:top-4 right-4 md:right-7 lg:right-32 text-gray-600' />
+            }
+            
         </form>
     )
 }
