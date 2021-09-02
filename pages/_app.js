@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps }) {
           </Layout>
         </PersistGate>
       </Provider>
+      
     </React.Fragment>
   );
 }

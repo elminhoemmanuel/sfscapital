@@ -42,12 +42,12 @@ export default function Search() {
                 <meta name="keywords" content="Bexels" />
             </Head>
 
-            <div className='pt-40 pb-20'>
+            <div className='pt-32 pb-20'>
                 <div>
                     <p className="text-2xl md:text-4xl text-black text-center">Search results for {queryValue}</p>
                 </div>
 
-                <div className="py-8 px-3 md:px-6">
+                <div className="pt-16 pb-8 px-3 md:px-6">
                     <SearchDisplay />
                 </div>
 

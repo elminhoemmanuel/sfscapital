@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Hero from '../components/Hero'
 import TabsDisplay from '../components/TabsDisplay';
 import TabsSection from '../components/TabsSection';
-import { setPage } from '../redux/actions/search'
+import { setPage, setQuery } from '../redux/actions/search'
 
 
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(setPage("home", () => { }));
+    dispatch(setQuery("", () => { }))
   }, [])
 
   return (
