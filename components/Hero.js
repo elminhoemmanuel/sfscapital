@@ -18,8 +18,8 @@ const Hero = () => {
     return (
         <div className={styling}>
             <div className="mb-8 text-left w-full md:w-4/5 lg:w-1/2 mx-auto">
-                <h1 className='text-white font-bold tracking-wide text-4xl lg:text-5xl'>The best free stock photos</h1>
-                <h1 className='text-white font-bold tracking-wide text-4xl lg:text-5xl'>shared by talented creators.</h1>
+                <h1 className='text-white font-bold tracking-wide text-4xl'>The best free stock photos</h1>
+                <h1 className='text-white font-bold tracking-wide text-4xl'>shared by talented creators.</h1>
             </div>
             <SearchField />
         </div>

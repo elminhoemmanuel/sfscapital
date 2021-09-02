@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "link-preview-generator": "^1.0.6",
     "masonry-layout": "^4.2.2",
     "next": "10.2.0",
     "next-redux-wrapper": "^7.0.2",

@@ -22,6 +22,7 @@ export default function Home() {
       <Head>
         <title>Bexels</title>
         <meta name="keywords" content="Bexels" />
+        <meta property="og:image" content="/images/preview.png" />
       </Head>
 
       <div className=''>
