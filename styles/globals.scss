@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 
 *{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 html, body{
@@ -16,92 +16,5 @@ html, body{
     position: relative;
 }
 
-// css for hero component
-.hero-height{
-    height: 32rem;
-}
-.hero1{
-    background-image: url('/images/hero1.jpg');
-}
-// .hero2{
-//     background-image: url('/images/hero2.jpg') !important;
-// }
-// .hero3{
-//     background-image: url('/images/hero3.jpg') !important;
-// }
-// .hero4{
-//     background-image: url('/images/hero4.jpg') !important;
-// }
-// .hero5{
-//     background-image: url('/images/hero5.jpg') !important;
-// }
-// .hero6{
-//     background-image: url('/images/hero6.jpg') !important;
-// }
-// .hero7{
-//     background-image: url('/images/hero7.jpg') !important;
-// }
-// .hero8{
-//     background-image: url('/images/hero8.jpg') !important;
-// }
-// .hero9{
-//     background-image: url('/images/hero9.jpg') !important;
-// }
-// .hero10{
-//     background-image: url('/images/hero10.jpg') !important;
-// }
-
-//css for spinner
-.spinner-page {
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    background:conic-gradient(#0000 10%,#05A081);
-    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
-    animation: s3 1s infinite linear;
-}
-@keyframes s3 {to{transform: rotate(1turn)}}
-
-//css for vertical navbar on mobile
-.mobile-box{
-    transition: ease-in 0.5s!important;
-    left:-100%;
-    display: hidden;
-    transition-property: display;
-}
-
-.mobile-box-show{
-    display: block;
-    transition: ease-in 0.5s !important;
-    left: 0;
-    transition-property: display;
-}
-
-// css for masonry layout
-.my-masonry-grid {
-    display: -webkit-box; /* Not needed if autoprefixing */
-    display: -ms-flexbox; /* Not needed if autoprefixing */
-    display: flex;
-    margin-left: -30px; /* gutter size offset */
-    width: auto;
-  }
-  .my-masonry-grid_column {
-    padding-left: 30px; /* gutter size */
-    background-clip: padding-box;
-  }
-  
-  /* Style your items */
-  .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-    background: grey;
-    margin-bottom: 30px;
-  }
-
-
-//   styles for search field
-@media screen and (min-width: 1024px) {
-    .search-box{
-        width:85%;
-    }
-}
 
 

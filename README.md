@@ -1,16 +1,15 @@
-### Bexels
+### SFS Capital
 
-A Pexels clone web application.
+A Landing page and Dashboard implementation.
 
 ### Technologies used: 
 * Next.js
 * React.js
 * Redux
 * Tailwindcss
-* [Pexels API](https://pexels.com/api)
 
 ### How can this be viewed live?
-* This project is deployed live on Netlify and can be viewed at [here](https://bexels.netlify.app/)
+* This project is deployed live on Netlify and can be viewed at [here]()
 
 
 ### How can this be tested locally ?
@@ -19,6 +18,4 @@ A Pexels clone web application.
 * run npm install
 * run npm run dev
 
-### Any Limitations?
-* The pexels API has a few limitations such as the number of API requests allowed per user for a month. Incase of any persistent errors , contact me here.
 
