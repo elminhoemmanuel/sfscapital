@@ -1,7 +1,11 @@
 import React from 'react'
 import PriBtn from './PriBtn'
+import { useRouter } from "next/router"
 
 const Hero = () => {
+
+    const router = useRouter()
+
     return (
         <div className="pb-8 grid grid-cols-1 md:grid-cols-2">
             <div className="pt-24 pl-6 md:pl-12 pr-6 md:pr-0">
@@ -16,7 +20,7 @@ const Hero = () => {
                     </div>
 
                     <div>
-                    <PriBtn btnType='button' btnText="Get started now" addStyle="font-bold text-base px-6 white-space-nowrap " />
+                    <PriBtn clicked={()=>{router.push("/dashboard")}} btnType='button' btnText="Get started now" addStyle="font-bold text-base px-6 white-space-nowrap " />
                     </div>
 
                 </div>
