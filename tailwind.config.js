@@ -12,6 +12,10 @@ module.exports = {
         sfsblue:"#152144",
         sfsyellow:"#FFD873",
         sfstext:"#002058",
+        inputtext:"#B2B7BC",
+        inputbg:"#F5F5F5",
+        sfsgreen:"#10C06D",
+        featurestext:"#B3B3B3",
       }
     },
 

@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 const Footer = () => {
     return (
-        <div>
+        <footer className="bg-sfsblue text-white">
             
-        </div>
+        </footer>
     )
 }
 
