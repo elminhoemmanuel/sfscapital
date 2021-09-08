@@ -69,7 +69,7 @@ const Navbar = () => {
             <div className='relative'>
                 <nav
                     className={nav ? 'flex items-center justify-between bg-sfsblue px-6 pt-7 pb-4 md:px-12 fixed top-0  w-full h-auto z-30 2xl:max-w-screen-2xl 2xl:mx-auto' :
-                        'flex items-center justify-between bg-sfsblue md:bg-transparent px-6 pt-7 pb-4 md:px-12 fixed top-0  w-full h-auto z-30 2xl:max-w-screen-2xl 2xl:mx-auto'
+                        'flex items-center justify-between bg-sfsblue lg:bg-transparent px-6 pt-7 pb-4 md:px-12 fixed top-0  w-full h-auto z-30 2xl:max-w-screen-2xl 2xl:mx-auto'
                     }>
 
                     {/* Left side of Navigation Bar */}

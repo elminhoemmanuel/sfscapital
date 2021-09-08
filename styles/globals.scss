@@ -34,16 +34,10 @@ html, body{
 
 
 .hero{
-    background-image: url('/images/herobg.png');
+    background-image: url('/images/heroimg.png');
     background-repeat: no-repeat;
     background-size: cover;
-    // border-top-left-radius: 90% 60px;
-    // border-bottom-left-radius: 90% 60px;
-    // border-bottom-right-radius: 60% 10px !important;
-    // border-top-left-radius: 50% ;
-    // border-bottom-left-radius: 50% ;
-    border-radius: 0 0 0 24rem ;
-    // border-bottom-right-radius: 20% ;
+    
 }
 
 //style for border on footer
@@ -55,7 +49,16 @@ html, body{
     .text-input{
         width:30% !important;
     }
-  }
+}
+@media screen and (min-width: 1400px) {
+    .hero{
+        background-image: url('/images/herobg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0 0 0 24rem ;
+        
+    }
+}
 
 
 
