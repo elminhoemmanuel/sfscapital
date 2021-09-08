@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React, { useState, useEffect } from 'react'
+import Hero from '../components/Hero'
 
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
 
       <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
-        Hello
+        <Hero />
       </div>
     </>
   )
