@@ -16,8 +16,8 @@ const Footer = () => {
                     <p className='text-featurestext text-sm text-left'>any of the following plaforms</p>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-                <div className="col-span-3">
+            <div className="flex flex-col md:flex-row items-center">
+                <div className="w-full md:w-3/4">
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-2 divide-x-0 md:divide-x divide-gray-50'>
                         {
                             footerData.map(item => {
@@ -31,8 +31,8 @@ const Footer = () => {
                                                 <Image width='25' height="25" src={item.downloadUrl} alt="download icon"/>
                                             </div>
                                             <div>
-                                                <p className="text-white text-sm">{item.upText}</p>
-                                                <p className="text-white text-sm">{item.downText}</p>
+                                                <p className="text-white text-sm">{item.upText} <span className='md:hidden'>{item.downText}</span></p>
+                                                <p className="text-white text-sm hidden md:block">{item.downText}</p>
                                             </div>
                                         </a>
                                     </Link>
@@ -43,6 +43,17 @@ const Footer = () => {
 
                     </div>
 
+                </div>
+                <div className="w-full md:w-1/4 text-sm rounded-md p-8 text-white bg-footeryellow">
+                    <div>
+                        <p className="mb-3">Contact us for more<br className="hidden md:block"/> infomation</p>
+                        <Link href="mailto:Info@sfsnigeria.com">
+                            <a className='mb-3 block'>Info@sfsnigeria.com</a>
+                        </Link>
+                        <Link href="tel:098-793 079-383">
+                            <a className='mb-3 block'>098-793 079-383</a>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>

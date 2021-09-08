@@ -16,6 +16,7 @@ module.exports = {
         inputbg:"#F5F5F5",
         sfsgreen:"#10C06D",
         featurestext:"#B3B3B3",
+        footeryellow:"#F9A825",
       }
     },
 
