@@ -17,4 +17,49 @@ html, body{
 }
 
 
+//css for vertical navbar on mobile
+.mobile-box{
+    transition: ease-in 0.5s!important;
+    left:-100%;
+    display: hidden;
+    transition-property: display;
+}
+
+.mobile-box-show{
+    display: block;
+    transition: ease-in 0.5s !important;
+    left: 0;
+    transition-property: display;
+}
+
+
+.hero{
+    background-image: url('/images/heroimg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+//style for border on footer
+.special{
+    border:none !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .text-input{
+        width:30% !important;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .hero{
+        background-image: url('/images/herobg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0 0 0 24rem ;
+        
+    }
+}
+
+
+
 
