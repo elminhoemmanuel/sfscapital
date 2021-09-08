@@ -48,7 +48,7 @@ const Navbar = () => {
 
                 <div className='flex lg:hidden flex-col font-bold justify-center'>
                     <div onClick={handleClickMobile}>
-                        <Link className='' href="/">
+                        <Link className='' href="/dashboard">
                             <a className='text-center block mb-4 w-full py-3 px-3 text-white hover:text-blue-600'>
                                 Login
                             </a>
@@ -56,7 +56,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="mb-4 text-center">
-                        <PriBtn btnType='button' btnText="Signup" addStyle="font-bold text-base px-8" />
+                        <PriBtn clicked={()=>{router.push("/dashboard");handleClickMobile()}} btnType='button' btnText="Signup" addStyle="font-bold text-base px-8" />
                     </div>
 
 
@@ -85,12 +85,12 @@ const Navbar = () => {
                     {/* Right side of Navigation Bar */}
                     <div className="flex items-center">
                         <div className='mr-8 hidden md:block'>
-                            <Link href='/'>
+                            <Link href='/dashboard'>
                                 <a className="text-white text-base">Login</a>
                             </Link>
                         </div>
                         <div className='hidden md:block'>
-                            <PriBtn btnType='button' btnText="Signup" addStyle="font-bold text-base px-8" />
+                            <PriBtn clicked={()=>{router.push("/dashboard")}} btnType='button' btnText="Signup" addStyle="font-bold text-base px-8" />
                         </div>
 
                         <div className='md:hidden'>
