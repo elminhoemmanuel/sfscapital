@@ -46,6 +46,11 @@ html, body{
     // border-bottom-right-radius: 20% ;
 }
 
+//style for border on footer
+.special{
+    border:none !important;
+}
+
 @media screen and (min-width: 1024px) {
     .text-input{
         width:30% !important;

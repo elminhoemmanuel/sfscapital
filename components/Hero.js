@@ -16,7 +16,7 @@ const Hero = () => {
                     </div>
 
                     <div>
-                    <PriBtn btnType='button' btnText="Get started now" addStyle="font-bold text-base px-6 white-space-nowrap w-full md:w-auto" />
+                    <PriBtn btnType='button' btnText="Get started now" addStyle="font-bold text-base px-6 white-space-nowrap " />
                     </div>
 
                 </div>

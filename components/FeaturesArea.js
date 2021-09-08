@@ -13,7 +13,7 @@ const FeaturesArea = () => {
                     featuresData.map(item =>{
                         return <div key={item.id} className="flex flex-col items-center justify-center">
                             <div className={`flex items-center justify-center mb-8 ${item.addStyle}`}>
-                                <Image width='100%' height="100%" src={item.iconUrl} />
+                                <Image width='100%' height="100%" src={item.iconUrl} alt="features icons"/>
                             </div>
                             <div >
                                 <h3 className='text-sfsblue font-bold text-xl mb-2 text-center'>{item.heading}</h3> 
