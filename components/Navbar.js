@@ -76,7 +76,7 @@ const Navbar = () => {
                     <div className="">
                         <Link href="/">
                             <a className=''>
-                                <Image width="40%" height="40%" src="/images/logo.png" className=""/>
+                                <Image width="40%" height="40%" src="/images/logo.png" className="" alt="logo"/>
                             </a>
                         </Link>
                         

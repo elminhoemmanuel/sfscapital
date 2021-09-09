@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React, { useState, useEffect } from 'react'
-import Dashboard from '../components/Dashboard'
+import DashboardMain from '../components/DashboardMain'
+import SideNav from '../components/SideNav'
 
 
 export default function Home() {
@@ -13,7 +14,8 @@ export default function Home() {
       </Head>
 
       <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
-        <Dashboard />
+            <SideNav />
+            <DashboardMain />
       </div>
     </>
   )
