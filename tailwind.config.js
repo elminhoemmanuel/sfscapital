@@ -17,7 +17,9 @@ module.exports = {
         sfsgreen:"#10C06D",
         featurestext:"#B3B3B3",
         footeryellow:"#F9A825",
-        dashtext:"#7E8598"
+        dashtext:"#7E8598",
+        dashbg:"#E5E5E5",
+        navborder:"#B2B7BC",
       }
     },
 
@@ -28,7 +30,7 @@ module.exports = {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      'md': '769px',
       // => @media (min-width: 768px) { ... }
 
       'lg': '1024px',

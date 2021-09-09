@@ -19,7 +19,7 @@ export default function Home() {
             <SideNav />
           </div>
 
-          <div className="col-span-9 md:col-span-7">
+          <div className="main col-span-9 md:col-span-7">
             <DashboardMain />
           </div>
         </div>
