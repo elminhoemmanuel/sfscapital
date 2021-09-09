@@ -5,7 +5,7 @@ import { sideData } from './SideNavData'
 
 const SideNav = () => {
     return (
-        <div className='overflow-y-hidden bg-sfsblue side'>
+        <div className='side'>
             <div className="fixed w-60 overflow-y-hidden h-screen bg-sfsblue text-dashtext p-4 flex flex-col justify-between">
                 <div className="">
                     <div className='px-3 pt-5 pb-5'>
