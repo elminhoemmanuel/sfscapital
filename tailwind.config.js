@@ -17,6 +17,7 @@ module.exports = {
         sfsgreen:"#10C06D",
         featurestext:"#B3B3B3",
         footeryellow:"#F9A825",
+        dashtext:"#7E8598"
       }
     },
 

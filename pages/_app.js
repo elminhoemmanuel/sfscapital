@@ -2,7 +2,6 @@ import '../styles/globals.scss'
 import React, {useState, useEffect } from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import Layout from '../components/Layout';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
@@ -25,9 +24,7 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
-          <Layout>
             <Component {...pageProps} />
-          </Layout>
           </div>
         </PersistGate>
       </Provider>
