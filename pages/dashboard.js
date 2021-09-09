@@ -14,15 +14,8 @@ export default function Home() {
       </Head>
 
       <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
-        <div className="grid grid-cols-9">
-          <div className="side col-span-2">
             <SideNav />
-          </div>
-
-          <div className="main col-span-9 md:col-span-7">
             <DashboardMain />
-          </div>
-        </div>
       </div>
     </>
   )

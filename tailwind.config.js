@@ -20,6 +20,8 @@ module.exports = {
         dashtext:"#7E8598",
         dashbg:"#E5E5E5",
         navborder:"#B2B7BC",
+        sfsorange:"#F2994A",
+        cardblue:"#0B638D",
       }
     },
 
