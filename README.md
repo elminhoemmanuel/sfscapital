@@ -9,7 +9,7 @@ A Landing page and Dashboard implementation.
 * Tailwindcss
 
 ### How can this be viewed live?
-* This project is deployed live on Netlify and can be viewed at [here]()
+* This project is deployed live on Netlify and can be viewed at [here](https://sfscapital.netlify.app/)
 
 
 ### How can this be tested locally ?
